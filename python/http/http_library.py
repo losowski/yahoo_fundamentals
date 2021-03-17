@@ -3,7 +3,7 @@
 import logging
 import requests
 
-class HTTPLibrary:
+class HTTPLibrary(object):
 
 	OPTIONS="https://uk.finance.yahoo.com/quote/ACCO/options?p="
 	HOLDERS="https://uk.finance.yahoo.com/quote/ACCO/holders?p="

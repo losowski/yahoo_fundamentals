@@ -5,13 +5,13 @@ import requests
 
 class HTTPLibrary(object):
 
-	OPTIONS="https://uk.finance.yahoo.com/quote/ACCO/options?p="
-	HOLDERS="https://uk.finance.yahoo.com/quote/ACCO/holders?p="
-	FINANCIALS="https://uk.finance.yahoo.com/quote/ACCO/financials?p="
+	OPTIONS="https://uk.finance.yahoo.com/quote/{sym}/options?p={sym}"
+	HOLDERS="https://uk.finance.yahoo.com/quote/{sym}/holders?p={sym}"
+	FINANCIALS="https://uk.finance.yahoo.com/quote/{sym}/financials?p={sym}"
 
 	def __init__(self, URL, symbol):
 		self.logger		=	logging.getLogger('HTTPLibrary')
-		self.url		=	URL+symbol
+		self.url		=	URL.format(sym= symbol)
 		self.req	=	None
 		self.logger.info("GET: %s", self.url)
 

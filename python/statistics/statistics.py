@@ -14,4 +14,4 @@ class Statistics (http_library.HTTPLibrary):
 
 	# def request()
 	def parse(self):
-		pass
+		self.logger.debug("%s", self.req.text)

@@ -1,9 +1,9 @@
 # Key Statistics
 
 import logging
-from python.http import http_library
+from python.common import yahoo
 
-class Statistics (http_library.HTTPLibrary):
+class Statistics (yahoo.Yahoo):
 
 	URL = "https://uk.finance.yahoo.com/quote/{sym}/key-statistics?p={sym}"
 
@@ -12,11 +12,5 @@ class Statistics (http_library.HTTPLibrary):
 		self.logger		=	logging.getLogger('Statistics')
 
 	def __del__(self):
-		pass
-
-	# def request()
-	def parse(self):
-		self.logger.debug("%s", self.req.text)
-		data = self.req.text.replace('><', '>\n<')
-		#self.logger.info("DATA %s", data)
+		super(Statistics, self).__del__()
 

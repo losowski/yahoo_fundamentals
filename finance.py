@@ -16,16 +16,18 @@ def main():
 	## ARGPARSE
 	parser = argparse.ArgumentParser(description = blurb)
 	#Model building
-	parser.add_argument('--detail', dest='detail', nargs=1, type=str, help='financials, holders, options, statistics')
-	parser.add_argument('--symbol', dest='symbol', nargs=1, type=str, help='symbol')
+	parser.add_argument(dest='detail', nargs=1, type=str, help='financials, holders, options, statistics')
+	parser.add_argument(dest='symbol', nargs=1, type=str, help='symbol')
 	#Get the arguments
 	args = parser.parse_args()
 	logger.info("Args: %s", args)
-	if (args.detail = 'statistics'):
-		s = statistics.Statistics(args.symbol)
+	req = None
+	if (args.detail[0] == 'statistics'):
+		logger.info("Statistics: %s", args.symbol[0])
+		req = statistics.Statistics(args.symbol[0])
 	#Generic behaviour
-	s.request()
-	s.parse()
+	req.request()
+	req.parse()
 
 # Assign a start point to the executable
 if __name__ == "__main__":

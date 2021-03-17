@@ -12,7 +12,7 @@ class HTTPLibrary(object):
 	def __init__(self, URL, symbol):
 		self.logger		=	logging.getLogger('HTTPLibrary')
 		self.url		=	URL+symbol
-		self.request	=	None
+		self.req	=	None
 		self.logger.info("GET: %s", self.url)
 
 
@@ -20,4 +20,6 @@ class HTTPLibrary(object):
 		pass
 
 	def request (self):
-		self.requests = requests.get(self.url)
+		self.req = requests.get(self.url)
+		self.logger.info("HTTP status: %s", self.req.status_code)
+

@@ -17,8 +17,9 @@ class Yahoo (http_library.HTTPLibrary):
 
 	def __init__(self, URL, symbol):
 		super(Yahoo, self).__init__(URL, symbol)
-		self.logger		=	logging.getLogger('Yahoo')
-		self.jsonData	=	None
+		self.logger			=	logging.getLogger('Yahoo')
+		self.jsonData		=	None
+		self.jsonString		=	None
 
 
 	def __del__(self):
@@ -39,6 +40,7 @@ class Yahoo (http_library.HTTPLibrary):
 			if (reMatch != None):
 				jsonMatch = reMatch.group('json_data')
 				jsonData = jsonMatch.replace(';','')
+				self.jsonString = jsonData
 				#self.logger.debug("JSON Data: \"%s\"", jsonData)
 				#print ("{json}".format(json=jsonData))
 				# Convert the data into a JSON object
@@ -47,15 +49,17 @@ class Yahoo (http_library.HTTPLibrary):
 	#Get Key
 	def get(self, key):
 		# Get JSON address
-		jsonkey = self.jsonMAP.get(key,"")
-		self.logger.info("jsonkey: \"%s\"", jsonkey)
+		jsonKey = self.jsonMAP.get(key,"")
+		self.logger.debug("jsonkey: \"%s\"", jsonKey)
 		#Get json Expression
-		expression = parse(jsonkey)
+		jsonExpression = parse(jsonKey)
 		# Get the data
-		for match in jsonkey.find(self.jsonData):
-			value = match.value
-			self.logger.info("%s (\"%s\"): %s", key, jsonkey, value)
-	
+		matches = jsonExpression.find(self.jsonString)
+		self.logger.info("json: %s (\"%s\"): %s", key, jsonKey, matches)
+		#for match in matches:
+		#	value = match.value
+		#	self.logger.debug("%s (\"%s\"): %s", key, jsonkey, value)
+		return matches
 
 	#debug
 	def debug(self):

@@ -4,12 +4,13 @@
 
 import logging
 import re
+import json
 
 from python.http import http_library
 
 class Yahoo (http_library.HTTPLibrary):
 
-	yahooData = re.compile(".*root.App.main = (?P<json_data>(.)+);\s+</script>.*", re.DOTALL)
+	yahooData = re.compile(".*root.App.main = (?P<json_data>(.)+)\s?\}\s?\(this\)\);\s+</script>.*", re.DOTALL)
 
 	def __init__(self, URL, symbol):
 		super(Yahoo, self).__init__(URL, symbol)
@@ -33,5 +34,9 @@ class Yahoo (http_library.HTTPLibrary):
 			self.logger.debug("JSON Match: \"%s\"", reMatch)
 			# If it is a match - store the json in the object
 			if (reMatch != None):
-				self.jsonData = reMatch.group('json_data')
-				self.logger.debug("JSON Data: \"%s\"", self.jsonData)
+				jsonMatch = reMatch.group('json_data')
+				jsonData = jsonMatch.replace(';','')
+				#self.logger.debug("JSON Data: \"%s\"", jsonData)
+				#print ("{json}".format(json=jsonData))
+				# Convert the data into a JSON object
+				self.jsonData = json.loads(jsonData)

@@ -5,10 +5,13 @@
 import logging
 import re
 import json
+from jsonpath_ng import jsonpath, parse
 
 from python.http import http_library
 
 class Yahoo (http_library.HTTPLibrary):
+
+	jsonMAP = {}
 
 	yahooData = re.compile(".*root.App.main = (?P<json_data>(.)+)\s?\}\s?\(this\)\);\s+</script>.*", re.DOTALL)
 
@@ -40,3 +43,19 @@ class Yahoo (http_library.HTTPLibrary):
 				#print ("{json}".format(json=jsonData))
 				# Convert the data into a JSON object
 				self.jsonData = json.loads(jsonData)
+
+	#Get Key
+	def get(self, key):
+		# Get JSON address
+		jsonkey = self.jsonMAP.get(key,"")
+		#Get json Expression
+		expression = parse(jsonkey)
+		# Get the data
+		for match in jsonkey.find(self.jsonData):
+			value = match.value
+			self.logger.info("%s (\"%s\"): %s", key, jsonkey, value)
+	
+
+	#debug
+	def debug(self):
+		pass

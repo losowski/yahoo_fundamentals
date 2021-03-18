@@ -1,4 +1,8 @@
 Yahoo Fundamentals: Obtain the fundamentals details from yahoo finance
 
-# Requirements
-pip install requests
+# pip requirements
+requests
+jsonpath-ng
+
+## Setup
+pip install requests jsonpath-ng

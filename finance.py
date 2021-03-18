@@ -18,6 +18,7 @@ def main():
 	#Model building
 	parser.add_argument(dest='detail', nargs=1, type=str, help='financials, holders, options, statistics')
 	parser.add_argument(dest='symbol', nargs=1, type=str, help='symbol')
+	parser.add_argument('--debug', dest='debug', type=bool, help='debug', default=False)
 	#Get the arguments
 	args = parser.parse_args()
 	logger.info("Args: %s", args)
@@ -28,6 +29,9 @@ def main():
 	#Generic behaviour
 	req.request()
 	req.parse()
+	if (args.debug):
+		#test
+		req.debug()
 
 # Assign a start point to the executable
 if __name__ == "__main__":

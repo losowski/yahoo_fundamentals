@@ -8,7 +8,8 @@ class Statistics (yahoo.Yahoo):
 
 	URL = "https://uk.finance.yahoo.com/quote/{sym}/key-statistics?p={sym}"
 
-	jsonMAP = {"52WeekChange":"context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.52WeekChange.raw",
+	jsonMAP = { \
+				"52WeekChange": 'context[*].dispatcher[*].stores[*].QuoteSummaryStore[*].defaultKeyStatistics[*].52WeekChange[*].raw',
 			}
 
 	def __init__(self, symbol):

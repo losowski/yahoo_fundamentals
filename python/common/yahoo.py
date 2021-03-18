@@ -48,6 +48,7 @@ class Yahoo (http_library.HTTPLibrary):
 	def get(self, key):
 		# Get JSON address
 		jsonkey = self.jsonMAP.get(key,"")
+		self.logger.info("jsonkey: \"%s\"", jsonkey)
 		#Get json Expression
 		expression = parse(jsonkey)
 		# Get the data

@@ -9,11 +9,13 @@ from python.http import http_library
 
 class Yahoo (http_library.HTTPLibrary):
 
-	yahooData = re.compile("^.*root.App.main = (?P<json_data>.*);.*$")
+	yahooData = re.compile(".*root.App.main = (?P<json_data>(.)+);\s+</script>.*", re.DOTALL)
 
 	def __init__(self, URL, symbol):
 		super(Yahoo, self).__init__(URL, symbol)
 		self.logger		=	logging.getLogger('Yahoo')
+		self.jsonData	=	None
+
 
 	def __del__(self):
 		super(Yahoo, self).__del__()
@@ -21,14 +23,15 @@ class Yahoo (http_library.HTTPLibrary):
 
 	# def request()
 	def parse(self):
-		self.logger.debug("%s", self.req.text)
-		#TODO: Conver the file into XML
-		#TODO: Get the <script> that contains the string in question (root.App.main)
-		#data = self.req.text.replace('><', '>\n<')
-		#self.logger.info("DATA %s", data)
-		# Parse this substring through the regex matcher to get the desired substring
-		#reMatch = self.yahooData.match(data)
-		#self.logger.info("JSON Match: \"%s\"", reMatch)
-		#if (reMatch != None):
-		#	jsonData = reMatch.group('json_data')
-		#	self.logger.info("JSON Data: \"%s\"", jsonData)
+		#self.logger.debug("%s", self.req.text)
+		# Convert the HTML string into a series of scripts
+		scripts = self.req.text.split('<script')
+		for scr in scripts:
+			self.logger.debug("Script: %s", scr)
+			# Check against regex
+			reMatch = self.yahooData.match(scr)
+			self.logger.debug("JSON Match: \"%s\"", reMatch)
+			# If it is a match - store the json in the object
+			if (reMatch != None):
+				self.jsonData = reMatch.group('json_data')
+				self.logger.debug("JSON Data: \"%s\"", self.jsonData)

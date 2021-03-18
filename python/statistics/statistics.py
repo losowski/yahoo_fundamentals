@@ -1,7 +1,6 @@
 # Key Statistics
 
 import logging
-import json
 
 from python.common import yahoo
 

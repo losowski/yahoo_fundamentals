@@ -3,16 +3,16 @@
 import logging
 import requests
 
-class HTTPLibrary:
+class HTTPLibrary(object):
 
-	OPTIONS="https://uk.finance.yahoo.com/quote/ACCO/options?p="
-	HOLDERS="https://uk.finance.yahoo.com/quote/ACCO/holders?p="
-	FINANCIALS="https://uk.finance.yahoo.com/quote/ACCO/financials?p="
+	OPTIONS="https://uk.finance.yahoo.com/quote/{sym}/options?p={sym}"
+	HOLDERS="https://uk.finance.yahoo.com/quote/{sym}/holders?p={sym}"
+	FINANCIALS="https://uk.finance.yahoo.com/quote/{sym}/financials?p={sym}"
 
 	def __init__(self, URL, symbol):
 		self.logger		=	logging.getLogger('HTTPLibrary')
-		self.url		=	URL+symbol
-		self.request	=	None
+		self.url		=	URL.format(sym= symbol)
+		self.req	=	None
 		self.logger.info("GET: %s", self.url)
 
 
@@ -20,4 +20,6 @@ class HTTPLibrary:
 		pass
 
 	def request (self):
-		self.requests = requests.get(self.url)
+		self.req = requests.get(self.url)
+		self.logger.info("HTTP status: %s", self.req.status_code)
+

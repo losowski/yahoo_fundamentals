@@ -56,7 +56,8 @@ class Yahoo (http_library.HTTPLibrary):
 		# Get the data
 		matches = jsonExpression.find(self.jsonData)
 		#self.logger.info("json: %s (\"%s\"): %s", key, jsonKey, matches.value)
-		return [ match.value for match in matches ]
+		# Return only the first value (not using a doc - so expect single values)
+		return matches[0].value
 
 	#debug print
 	def debug_print(self, key):

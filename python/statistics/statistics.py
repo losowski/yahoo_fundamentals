@@ -9,8 +9,9 @@ class Statistics (yahoo.Yahoo):
 	URL = "https://uk.finance.yahoo.com/quote/{sym}/key-statistics?p={sym}"
 
 	jsonMAP = { \
-				"demo"			: 'context.dispatcher.stores.AdStore.adFetchEvent.ps',
-				"52WeekChange"	: 'context[*].dispatcher[*].stores[*].QuoteSummaryStore[*].defaultKeyStatistics[*].52WeekChange[*].raw',
+				"demo"			: """context.dispatcher.stores.AdStore.adFetchEvent.ps""",
+				"52WeekChange"	: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'52WeekChange'.fmt""",
+				"profitMargins"	: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.profitMargins.fmt""",
 			}
 
 	def __init__(self, symbol):
@@ -24,3 +25,4 @@ class Statistics (yahoo.Yahoo):
 	def debug(self):
 		print ("{0}".format(self.get("demo")))
 		print ("{0}".format(self.get("52WeekChange")))
+		print ("{0}".format(self.get("profitMargins")))

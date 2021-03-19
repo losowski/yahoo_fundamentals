@@ -9,11 +9,19 @@ from python.common import yahoo
 -- Profitability
 'profitMargins': {'raw': 0.03746, 'fmt': '3.75%'},
 + Operating margin (financialData.operatingMargins)
+'grossMargins': {'raw': 0.29543, 'fmt': '29.54%'},
 
 -- Management effectiveness (last year)
 -- Income statement (last year)
 -- Balance Sheet (last quarter)
+
+
 -- Cash flow statement (last year)
+'totalCash': {'raw': 36600000, 'fmt': '36.6M', 'longFmt': '36,600,000'},
+'totalCashPerShare': {'raw': 0.385, 'fmt': '0.38'},
+'operatingCashflow': {'raw': 119200000, 'fmt': '119.2M', 'longFmt': '119,200,000'},
+'freeCashflow': {'raw': 128587504, 'fmt': '128.59M', 'longFmt': '128,587,504'},
+
 
 -- Share statistics
 'sharesOutstanding': {'raw': 94496800, 'fmt': '94.5M', 'longFmt': '94,496,800'},
@@ -43,6 +51,11 @@ class Statistics (yahoo.Yahoo):
 				#-- Income statement (last year)
 				#-- Balance Sheet (last quarter)
 				#-- Cash flow statement (last year)
+				"totalCash"					: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalCash'.fmt""",
+				"totalCashPerShare"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalCashPerShare'.fmt""",
+				"operatingCashflow"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'operatingCashflow'.fmt""",
+				"freeCashflow"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'freeCashflow'.fmt""",
+
 				# -- Share statistics
 				"sharesOutstanding"			: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesOutstanding'.fmt""",
 				"floatShares"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'floatShares'.fmt""",
@@ -68,6 +81,18 @@ class Statistics (yahoo.Yahoo):
 	#debug
 	def debug(self):
 		self.debug_print("demo")
+		#-- Valuation measures
+		# -- Profitability
+		self.debug_print("profitMargins")
+		self.debug_print("operatingMargins")
+		#-- Management effectiveness (last year)
+		#-- Income statement (last year)
+		#-- Balance Sheet (last quarter)
+		#-- Cash flow statement (last year)
+		self.debug_print("totalCash")
+		self.debug_print("totalCashPerShare")
+		self.debug_print("operatingCashflow")
+		self.debug_print("freeCashflow")
 		# -- Share statistics
 		self.debug_print("sharesOutstanding")
 		self.debug_print("floatShares")
@@ -81,11 +106,3 @@ class Statistics (yahoo.Yahoo):
 		self.debug_print("sharesShortPriorMonth")
 
 
-		# -- Profitability
-		self.debug_print("profitMargins")
-		self.debug_print("operatingMargins")
-		#-- Valuation measures
-		#-- Management effectiveness (last year)
-		#-- Income statement (last year)
-		#-- Balance Sheet (last quarter)
-		#-- Cash flow statement (last year)

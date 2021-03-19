@@ -6,6 +6,7 @@ from python.common import yahoo
 
 """
 -- Valuation measures
+-**- Financial Highlights
 -- Profitability
 'profitMargins': {'raw': 0.03746, 'fmt': '3.75%'},
 + Operating margin (financialData.operatingMargins)
@@ -50,6 +51,7 @@ class Statistics (yahoo.Yahoo):
 
 	jsonMAP = { \
 				#-- Valuation measures
+				##-**- Financial Highlights
 				# -- Profitability
 				"profitMargins"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'profitMargins'.fmt""",
 				"operatingMargins"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'operatingMargins'.fmt""",
@@ -95,7 +97,7 @@ class Statistics (yahoo.Yahoo):
 	def debug(self):
 		self.debug_print("demo")
 		#-- Valuation measures
-
+		# -**- Financial Highlights
 		# -- Profitability
 		self.debug_print("profitMargins")
 		self.debug_print("operatingMargins")

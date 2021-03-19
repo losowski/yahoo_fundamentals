@@ -12,13 +12,21 @@ from python.common import yahoo
 'grossMargins': {'raw': 0.29543, 'fmt': '29.54%'},
 
 -- Management effectiveness (last year)
+'returnOnAssets': {'raw': 0.026700001, 'fmt': '2.67%'},
+'returnOnEquity': {'raw': 0.08177, 'fmt': '8.18%'},
+
+
 -- Income statement (last year)
 -- Balance Sheet (last quarter)
+'totalCash': {'raw': 36600000, 'fmt': '36.6M', 'longFmt': '36,600,000'},
+'totalCashPerShare': {'raw': 0.385, 'fmt': '0.38'},
+'totalDebt': {'raw': 1230200064, 'fmt': '1.23B', 'longFmt': '1,230,200,064'},
+'debtToEquity': {'raw': 165.639, 'fmt': '165.64'},
+'currentRatio': {'raw': 1.308, 'fmt': '1.31'},
+BookValuePerShare???
 
 
 -- Cash flow statement (last year)
-'totalCash': {'raw': 36600000, 'fmt': '36.6M', 'longFmt': '36,600,000'},
-'totalCashPerShare': {'raw': 0.385, 'fmt': '0.38'},
 'operatingCashflow': {'raw': 119200000, 'fmt': '119.2M', 'longFmt': '119,200,000'},
 'freeCashflow': {'raw': 128587504, 'fmt': '128.59M', 'longFmt': '128,587,504'},
 
@@ -29,7 +37,6 @@ from python.common import yahoo
 'heldPercentInsiders': {'raw': 0.028719999, 'fmt': '2.87%'},
 'heldPercentInstitutions': {'raw': 0.94201, 'fmt': '94.20%'},
 'sharesShort': {'raw': 2830005, 'fmt': '2.83M', 'longFmt': '2,830,005'},
-
 'shortRatio': {'raw': 5.69, 'fmt': '5.69'},
 'shortPercentOfFloat': {'raw': 0.0307, 'fmt': '3.07%'},
 'sharesPercentSharesOut': {'raw': 0.0298, 'fmt': '2.98%'},
@@ -48,11 +55,18 @@ class Statistics (yahoo.Yahoo):
 				"operatingMargins"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'operatingMargins'.fmt""",
 
 				#-- Management effectiveness (last year)
+				"returnOnAssets"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'returnOnAssets'.fmt""",
+				"returnOnEquity"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'returnOnEquity'.fmt""",
+
 				#-- Income statement (last year)
 				#-- Balance Sheet (last quarter)
-				#-- Cash flow statement (last year)
 				"totalCash"					: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalCash'.fmt""",
 				"totalCashPerShare"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalCashPerShare'.fmt""",
+				"totalDebt"					: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalDebt'.fmt""",
+				"debtToEquity"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'debtToEquity'.fmt""",
+				"currentRatio"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'currentRatio'.fmt""",
+
+				#-- Cash flow statement (last year)
 				"operatingCashflow"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'operatingCashflow'.fmt""",
 				"freeCashflow"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'freeCashflow'.fmt""",
 
@@ -62,7 +76,6 @@ class Statistics (yahoo.Yahoo):
 				"heldPercentInsiders"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'heldPercentInsiders'.fmt""",
 				"heldPercentInstitutions"	: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'heldPercentInstitutions'.fmt""",
 				"sharesShort"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesShort'.fmt""",
-
 				"shortRatio"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'shortRatio'.fmt""",
 				"shortPercentOfFloat"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'shortPercentOfFloat'.fmt""",
 				"sharesPercentSharesOut"	: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesPercentSharesOut'.fmt""",
@@ -82,27 +95,36 @@ class Statistics (yahoo.Yahoo):
 	def debug(self):
 		self.debug_print("demo")
 		#-- Valuation measures
+
 		# -- Profitability
 		self.debug_print("profitMargins")
 		self.debug_print("operatingMargins")
+
 		#-- Management effectiveness (last year)
+		self.debug_print("returnOnAssets")
+		self.debug_print("returnOnEquity")
+
 		#-- Income statement (last year)
+
 		#-- Balance Sheet (last quarter)
-		#-- Cash flow statement (last year)
 		self.debug_print("totalCash")
 		self.debug_print("totalCashPerShare")
+		self.debug_print("totalDebt")
+		self.debug_print("debtToEquity")
+		self.debug_print("currentRatio")
+
+		#-- Cash flow statement (last year)
 		self.debug_print("operatingCashflow")
 		self.debug_print("freeCashflow")
+
 		# -- Share statistics
 		self.debug_print("sharesOutstanding")
 		self.debug_print("floatShares")
 		self.debug_print("heldPercentInsiders")
 		self.debug_print("heldPercentInstitutions")
 		self.debug_print("sharesShort")
-
 		self.debug_print("shortRatio")
 		self.debug_print("shortPercentOfFloat")
 		self.debug_print("sharesPercentSharesOut")
 		self.debug_print("sharesShortPriorMonth")
-
 

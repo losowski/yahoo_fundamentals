@@ -7,6 +7,21 @@ from python.common import yahoo
 """
 -- Valuation measures
 -**- Financial Highlights
+-- Valuation measures
+'marketCap': {'raw': 837216128, 'fmt': '837.22M', 'longFmt': '837,216,128'}, (daily!)
+defaultKeyStatistics.'enterpriseValue': {'raw': 2027964800, 'fmt': '2.03B', 'longFmt': '2,027,964,800'},
+
+'trailingPE': {'raw': 13.553847, 'fmt': '13.55'},
+'forwardPE': {'raw': 6.075862, 'fmt': '6.08'},
+
+defaultKeyStatistics.'pegRatio': {'raw': 0.82, 'fmt': '0.82'},
+
+'priceToSalesTrailing12Months': {'raw': 0.50580966, 'fmt': '0.51'},
+defaultKeyStatistics.'priceToBook': {'raw': 1.1261665, 'fmt': '1.13'},
+defaultKeyStatistics.'enterpriseToRevenue': {'raw': 1.225, 'fmt': '1.23'},
+defaultKeyStatistics.'enterpriseToEbitda': {'raw': 11.022, 'fmt': '11.02'},
+
+
 -- Profitability
 'profitMargins': {'raw': 0.03746, 'fmt': '3.75%'},
 + Operating margin (financialData.operatingMargins)
@@ -52,6 +67,17 @@ class Statistics (yahoo.Yahoo):
 	jsonMAP = { \
 				#-- Valuation measures
 				##-**- Financial Highlights
+				"marketCap"					: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'marketCap'.fmt""",
+				"enterpriseValue"			: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'enterpriseValue'.fmt""",
+				"trailingPE"				: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'trailingPE'.fmt""",
+				"forwardPE"					: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'forwardPE'.fmt""",
+				"pegRatio"					: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'pegRatio'.fmt""",
+
+				"priceToSalesTrailing12Months"		: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'priceToSalesTrailing12Months'.fmt""",
+				"priceToBook"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'priceToBook'.fmt""",
+				"enterpriseToRevenue"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'enterpriseToRevenue'.fmt""",
+				"enterpriseToEbitda"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'enterpriseToEbitda'.fmt""",
+
 				# -- Profitability
 				"profitMargins"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'profitMargins'.fmt""",
 				"operatingMargins"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'operatingMargins'.fmt""",
@@ -101,6 +127,18 @@ class Statistics (yahoo.Yahoo):
 		self.debug_print("demo")
 		#-- Valuation measures
 		# -**- Financial Highlights
+		self.debug_print("marketCap")
+		self.debug_print("enterpriseValue")
+		self.debug_print("trailingPE")
+		self.debug_print("forwardPE")
+		self.debug_print("pegRatio")
+
+		self.debug_print("priceToSalesTrailing12Months")
+		self.debug_print("priceToBook")
+		self.debug_print("enterpriseToRevenue")
+		self.debug_print("enterpriseToEbitda")
+
+
 		# -- Profitability
 		self.debug_print("profitMargins")
 		self.debug_print("operatingMargins")

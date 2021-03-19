@@ -24,7 +24,7 @@ from python.common import yahoo
 'totalDebt': {'raw': 1230200064, 'fmt': '1.23B', 'longFmt': '1,230,200,064'},
 'debtToEquity': {'raw': 165.639, 'fmt': '165.64'},
 'currentRatio': {'raw': 1.308, 'fmt': '1.31'},
-BookValuePerShare???
+defaultKeyStatistics.'bookValue': {'raw': 7.823, 'fmt': '7.82'},
 
 
 -- Cash flow statement (last year)
@@ -67,6 +67,7 @@ class Statistics (yahoo.Yahoo):
 				"totalDebt"					: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalDebt'.fmt""",
 				"debtToEquity"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'debtToEquity'.fmt""",
 				"currentRatio"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'currentRatio'.fmt""",
+				"bookValue"					: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'bookValue'.fmt""",
 
 				#-- Cash flow statement (last year)
 				"operatingCashflow"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'operatingCashflow'.fmt""",
@@ -83,7 +84,9 @@ class Statistics (yahoo.Yahoo):
 				"sharesPercentSharesOut"	: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesPercentSharesOut'.fmt""",
 				"sharesShortPriorMonth"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesShortPriorMonth'.fmt""",
 				# DEMO
+				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics""",
 				"demo"			: """context.dispatcher.stores.QuoteSummaryStore.financialData""",
+				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail""",
 			}
 
 	def __init__(self, symbol):

@@ -58,6 +58,11 @@ class Yahoo (http_library.HTTPLibrary):
 		#self.logger.info("json: %s (\"%s\"): %s", key, jsonKey, matches.value)
 		return [ match.value for match in matches ]
 
+	#debug print
+	def debug_print(self, key):
+		print ("{0}: {1}".format(key, self.get(key)))
+
 	#debug
 	def debug(self):
 		pass
+

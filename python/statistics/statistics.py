@@ -67,48 +67,48 @@ class Statistics (yahoo.Yahoo):
 	jsonMAP = { \
 				#-- Valuation measures
 				##-**- Financial Highlights
-				"marketCap"					: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'marketCap'.fmt""",
-				"enterpriseValue"			: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'enterpriseValue'.fmt""",
-				"trailingPE"				: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'trailingPE'.fmt""",
-				"forwardPE"					: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'forwardPE'.fmt""",
-				"pegRatio"					: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'pegRatio'.fmt""",
+				"marketCap"					: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'marketCap'.raw""",
+				"enterpriseValue"			: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'enterpriseValue'.raw""",
+				"trailingPE"				: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'trailingPE'.raw""",
+				"forwardPE"					: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'forwardPE'.raw""",
+				"pegRatio"					: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'pegRatio'.raw""",
 
-				"priceToSalesTrailing12Months"		: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'priceToSalesTrailing12Months'.fmt""",
-				"priceToBook"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'priceToBook'.fmt""",
-				"enterpriseToRevenue"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'enterpriseToRevenue'.fmt""",
-				"enterpriseToEbitda"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'enterpriseToEbitda'.fmt""",
+				"priceToSalesTrailing12Months"		: """context.dispatcher.stores.QuoteSummaryStore.summaryDetail.'priceToSalesTrailing12Months'.raw""",
+				"priceToBook"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'priceToBook'.raw""",
+				"enterpriseToRevenue"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'enterpriseToRevenue'.raw""",
+				"enterpriseToEbitda"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'enterpriseToEbitda'.raw""",
 
 				# -- Profitability
-				"profitMargins"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'profitMargins'.fmt""",
-				"operatingMargins"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'operatingMargins'.fmt""",
+				"profitMargins"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'profitMargins'.raw""",
+				"operatingMargins"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'operatingMargins'.raw""",
 
 				#-- Management effectiveness (last year)
-				"returnOnAssets"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'returnOnAssets'.fmt""",
-				"returnOnEquity"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'returnOnEquity'.fmt""",
+				"returnOnAssets"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'returnOnAssets'.raw""",
+				"returnOnEquity"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'returnOnEquity'.raw""",
 
 				#-- Income statement (last year)
 				#-- Balance Sheet (last quarter)
-				"totalCash"					: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalCash'.fmt""",
-				"totalCashPerShare"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalCashPerShare'.fmt""",
-				"totalDebt"					: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalDebt'.fmt""",
-				"debtToEquity"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'debtToEquity'.fmt""",
-				"currentRatio"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'currentRatio'.fmt""",
-				"bookValue"					: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'bookValue'.fmt""",
+				"totalCash"					: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalCash'.raw""",
+				"totalCashPerShare"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalCashPerShare'.raw""",
+				"totalDebt"					: """context.dispatcher.stores.QuoteSummaryStore.financialData.'totalDebt'.raw""",
+				"debtToEquity"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'debtToEquity'.raw""",
+				"currentRatio"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'currentRatio'.raw""",
+				"bookValue"					: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'bookValue'.raw""",
 
 				#-- Cash flow statement (last year)
-				"operatingCashflow"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'operatingCashflow'.fmt""",
-				"freeCashflow"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'freeCashflow'.fmt""",
+				"operatingCashflow"			: """context.dispatcher.stores.QuoteSummaryStore.financialData.'operatingCashflow'.raw""",
+				"freeCashflow"				: """context.dispatcher.stores.QuoteSummaryStore.financialData.'freeCashflow'.raw""",
 
 				# -- Share statistics
-				"sharesOutstanding"			: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesOutstanding'.fmt""",
-				"floatShares"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'floatShares'.fmt""",
-				"heldPercentInsiders"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'heldPercentInsiders'.fmt""",
-				"heldPercentInstitutions"	: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'heldPercentInstitutions'.fmt""",
-				"sharesShort"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesShort'.fmt""",
-				"shortRatio"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'shortRatio'.fmt""",
-				"shortPercentOfFloat"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'shortPercentOfFloat'.fmt""",
-				"sharesPercentSharesOut"	: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesPercentSharesOut'.fmt""",
-				"sharesShortPriorMonth"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesShortPriorMonth'.fmt""",
+				"sharesOutstanding"			: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesOutstanding'.raw""",
+				"floatShares"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'floatShares'.raw""",
+				"heldPercentInsiders"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'heldPercentInsiders'.raw""",
+				"heldPercentInstitutions"	: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'heldPercentInstitutions'.raw""",
+				"sharesShort"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesShort'.raw""",
+				"shortRatio"				: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'shortRatio'.raw""",
+				"shortPercentOfFloat"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'shortPercentOfFloat'.raw""",
+				"sharesPercentSharesOut"	: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesPercentSharesOut'.raw""",
+				"sharesShortPriorMonth"		: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics.'sharesShortPriorMonth'.raw""",
 				# DEMO
 				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.defaultKeyStatistics""",
 				"demo"			: """context.dispatcher.stores.QuoteSummaryStore.financialData""",

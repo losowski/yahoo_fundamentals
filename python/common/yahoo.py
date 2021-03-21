@@ -59,7 +59,7 @@ class Yahoo (http_library.HTTPLibrary):
 		# Return only the first value (not using a doc - so expect single values)
 		match = None
 		if (len(matches)):
-			match =  matches[0].value
+			match = [m.value for m in  matches]
 		return match
 
 	#debug print

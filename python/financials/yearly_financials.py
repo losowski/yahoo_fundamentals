@@ -35,7 +35,7 @@ from python.common import yahoo
 """
 
 
-class Financials (yahoo.Yahoo):
+class YearlyFinancials (yahoo.Yahoo):
 
 	URL = "https://uk.finance.yahoo.com/quote/{sym}/financials?p={sym}"
 
@@ -43,27 +43,27 @@ class Financials (yahoo.Yahoo):
 				# Quarterly - Income Statement
 				#"breakdown" ??
 				#"revenue" ??
-				"costOfRevenue"						:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].costOfRevenue.raw""",
-				"grossProfit"						:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].grossProfit.raw""",
-				"sellingGeneralAdministrative"		:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].sellingGeneralAdministrative.raw""",
+				"costOfRevenue"						:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].costOfRevenue.raw""",
+				"grossProfit"						:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].grossProfit.raw""",
+				"sellingGeneralAdministrative"		:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].sellingGeneralAdministrative.raw""",
 
-				"totalOperatingExpenses"			:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].totalOperatingExpenses.raw""",
-				"operatingIncome"					:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].operatingIncome.raw""",
-				"interestExpense"					:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].interestExpense.raw""",
-				"otherOperatingExpenses"			:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].otherOperatingExpenses.raw""",
-				"incomeBeforeTax"					:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].incomeBeforeTax.raw""",
+				"totalOperatingExpenses"			:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].totalOperatingExpenses.raw""",
+				"operatingIncome"					:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].operatingIncome.raw""",
+				"interestExpense"					:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].interestExpense.raw""",
+				"otherOperatingExpenses"			:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].otherOperatingExpenses.raw""",
+				"incomeBeforeTax"					:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].incomeBeforeTax.raw""",
 
-				"incomeTaxExpense"					:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].incomeTaxExpense.raw""",
-				"netIncomeFromContinuingOps"		:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].netIncomeFromContinuingOps.raw""",
-				"netIncome"							:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].netIncome.raw""",
-				"netIncomeApplicableToCommonShares"	:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].netIncomeApplicableToCommonShares.raw""",
+				"incomeTaxExpense"					:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].incomeTaxExpense.raw""",
+				"netIncomeFromContinuingOps"		:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].netIncomeFromContinuingOps.raw""",
+				"netIncome"							:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].netIncome.raw""",
+				"netIncomeApplicableToCommonShares"	:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].netIncomeApplicableToCommonShares.raw""",
 				#"Basic EPS" ??
 
 				#"Diluted EPS" ??
 				#"Basic Average Shares" ??
 				#"Diluted Average Shares" ??
 
-				"ebit"	:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistoryQuarterly'.'incomeStatementHistory'[*].ebit.raw""",
+				"ebit"	:	"""context.dispatcher.stores.QuoteSummaryStore.'incomeStatementHistory'.'incomeStatementHistory'[*].ebit.raw""",
 
 				# Quarterly - Balance Sheet
 				# Quarterly - Cash Flow
@@ -74,11 +74,11 @@ class Financials (yahoo.Yahoo):
 			}
 
 	def __init__(self, symbol):
-		super(Financials, self).__init__(self.URL, symbol)
-		self.logger		=	logging.getLogger('Financials')
+		super(YearlyFinancials, self).__init__(self.URL, symbol)
+		self.logger		=	logging.getLogger('YearlyFinancials')
 
 	def __del__(self):
-		super(Financials, self).__del__()
+		super(YearlyFinancials, self).__del__()
 
 	#debug
 	def debug(self):

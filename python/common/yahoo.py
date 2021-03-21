@@ -55,7 +55,7 @@ class Yahoo (http_library.HTTPLibrary):
 		jsonExpression = jsonpath_ng.parse(jsonKey)
 		# Get the data
 		matches = jsonExpression.find(self.jsonData)
-		self.logger.info("json: %s (\"%s\"): %s", key, jsonKey, matches)
+		self.logger.debug("json: %s (\"%s\"): %s", key, jsonKey, matches)
 		# Return only the first value (not using a doc - so expect single values)
 		match = None
 		if (len(matches)):

@@ -88,25 +88,24 @@ class Financials (yahoo.Yahoo):
 		#"breakdown" ??
 		#"revenue" ??
 		self.debug_print("costOfRevenue")
-#		self.debug_print("grossProfit")
-#		self.debug_print("sellingGeneralAdministrative")
+		self.debug_print("grossProfit")
+		self.debug_print("sellingGeneralAdministrative")
 
-#		self.debug_print("totalOperatingExpenses")
-#		self.debug_print("operatingIncome")
-#		self.debug_print("interestExpense")
-#		self.debug_print("otherOperatingExpenses")
-#		self.debug_print("incomeBeforeTax")
+		self.debug_print("totalOperatingExpenses")
+		self.debug_print("operatingIncome")
+		self.debug_print("interestExpense")
+		self.debug_print("otherOperatingExpenses")
+		self.debug_print("incomeBeforeTax")
 
-#		self.debug_print("incomeTaxExpense")
-#		self.debug_print("netIncomeFromContinuingOps")
-#		self.debug_print("netIncome")
-#		self.debug_print("netIncomeApplicableToCommonShares")
+		self.debug_print("incomeTaxExpense")
+		self.debug_print("netIncomeFromContinuingOps")
+		self.debug_print("netIncome")
+		self.debug_print("netIncomeApplicableToCommonShares")
 		#"Basic EPS" ??
 
 		#"Diluted EPS" ??
 		#"Basic Average Shares" ??
 		#"Diluted Average Shares" ??
 
-#		self.debug_print("ebit")
-		#self.debug_print("revenue")
+		self.debug_print("ebit")
 

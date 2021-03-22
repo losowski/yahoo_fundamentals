@@ -194,7 +194,7 @@ class QuarterlyFinancials (yahoo.Yahoo):
 		#"Diluted Average Shares" ??
 
 		self.debug_print("ebit")
-		#Demo
+
 		# Quarterly - Balance Sheet
 		#Assets
 		#Current assets

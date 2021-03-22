@@ -9,7 +9,7 @@ from python.common import yahoo
 	#"Breakdown"
 	#"revenue" ??
 	'costOfRevenue': {'raw': 271900000, 'fmt': '271.9M', 'longFmt': '271,900,000'},
-	'grossProfit': {'raw': 142700000, 'fmt': '142.7M', 'longFmt': '142,700,000'}, 
+	'grossProfit': {'raw': 142700000, 'fmt': '142.7M', 'longFmt': '142,700,000'},
 	'sellingGeneralAdministrative': {'raw': 84500000, 'fmt': '84.5M', 'longFmt': '84,500,000'},
 
 	'totalOperatingExpenses': {'raw': 340000000, 'fmt': '340M', 'longFmt': '340,000,000'},
@@ -32,43 +32,43 @@ from python.common import yahoo
 
 # Quarterly - Balance Sheet
 	'endDate': {'raw': 1609372800, 'fmt': '2020-12-31'},
-	#Assets					
-	#Current assets					
+	#Assets
+	#Current assets
 	'cash': {'raw': 36600000, 'fmt': '36.6M', 'longFmt': '36,600,000'},
 	'netReceivables': {'raw': 356000000, 'fmt': '356M', 'longFmt': '356,000,000'},
 	'inventory': {'raw': 305100000, 'fmt': '305.1M', 'longFmt': '305,100,000'},
 	'otherCurrentAssets': {'raw': 30500000, 'fmt': '30.5M', 'longFmt': '30,500,000'},
 	'totalCurrentAssets': {'raw': 728200000, 'fmt': '728.2M', 'longFmt':'728,200,000'},
 
-	#Non-current assets					
-	#Property, plant and equipment					
+	#Non-current assets
+	#Property, plant and equipment
 	'propertyPlantEquipment': {'raw': 330600000, 'fmt': '330.6M', 'longFmt': '330,600,000'},
 
 	'goodWill': {'raw': 827400000, 'fmt': '827.4M', 'longFmt': '827,400,000'},
 	{'intangibleAssets': {'raw': 977000000, 'fmt': '977M', 'longFmt': '977,000,000'},
-	# Other long-term assets	49,000	36,500	24,900	19,700	17,400
-	Total non-current assets	2,320,500	1,930,800	1,909,200	1,915,200	1,982,600
+	# Other long-term assets
+	Total non-current assets
 	'totalAssets': {'raw': 3048700000, 'fmt': '3.05B', 'longFmt': '3,048,700,000'},
 
 	Liabilities and stockholders' equity
 
-	Liabilities					
-	Current liabilities					
-	Current debt	76,500	35,800	49,900	67,200	33,200
+	Liabilities
+	Current liabilities
+	Current debt
 	'accountsPayable': {'raw': 180200000, 'fmt': '180.2M', 'longFmt': '180,200,000'}
-	Accrued liabilities	91,400	76,900	64,100	64,200	99,700
-	Other current liabilities	145,200	124,200	105,500	104,000	139,900
-	Total current liabilities	556,900	470,300	484,100	469,500	588,800
+	Accrued liabilities
+	Other current liabilities
+	Total current liabilities
 
 
-	Non-current liabilities					
-	Long-term debt	1,054,600	876,300	971,400	856,900	777,200
-	Deferred tax liabilities	170,600	170,700	168,400	167,300	177,500
-	Other long-term liabilities	130,300	108,200	95,200	91,000	98,400
-	Total non-current liabilities	1,749,100	1,500,300	1,580,900	1,465,800	1,426,100
+	Non-current liabilities
+	Long-term debt
+	Deferred tax liabilities
+	Other long-term liabilities
+	Total non-current liabilities
 	'totalLiab': {'raw': 2306000000, 'fmt': '2.31B', 'longFmt': '2,306,000,000'},
 
-	Stockholders' equity					
+	Stockholders' equity
 	'commonStock': {'raw': 1000000, 'fmt': '1M', 'longFmt': '1,000,000'},
 	'retainedEarnings': {'raw': -537300000, 'fmt': '-537.3M', 'longFmt': '-537,300,000'},
 	'otherStockholderEquity': {'raw': -564200000, 'fmt': '-564.2M', 'longFmt': '-564,200,000'},
@@ -110,6 +110,48 @@ class QuarterlyFinancials (yahoo.Yahoo):
 				"ebit"	:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistoryQuarterly.incomeStatementHistory[*].ebit.raw""",
 
 				# Quarterly - Balance Sheet
+				#Assets
+				#Current assets
+				"cash"								: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].cash.raw""",
+				"netReceivables"					: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].netReceivables.raw""",
+				"inventory"							: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].inventory.raw""",
+				"otherCurrentAssets"				: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].otherCurrentAssets.raw""",
+
+				#Non-current assets
+				#Property, plant and equipment
+				"propertyPlantEquipment"			: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].propertyPlantEquipment.raw""",
+				"goodWill"							: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].goodWill.raw""",
+				"intangibleAssets"					: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].intangibleAssets.raw""",
+
+				# Other long-term assets
+				# Total non-current assets
+				"totalAssets"						: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].totalAssets.raw""",
+
+				# Liabilities and stockholders' equity
+
+				# Liabilities
+				# Current liabilities
+				# Current debt
+				"accountsPayable"					: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].accountsPayable.raw""",
+				# Accrued liabilities
+				# Other current liabilities
+				# Total current liabilities
+
+
+				# Non-current liabilities
+				# Long-term debt
+				# Deferred tax liabilities
+				# Other long-term liabilities
+				# Total non-current liabilities
+				"totalLiab"							: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].totalLiab.raw""",
+
+				# Stockholders' equity
+				"commonStock"					: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].commonStock.raw""",
+				"retainedEarnings"				: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].retainedEarnings.raw""",
+				"otherStockholderEquity"		: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].otherStockholderEquity.raw""",
+				"totalStockholderEquity"		: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements[*].totalStockholderEquity.raw""",
+
+
 				# Quarterly - Cash Flow
 				# DEMO
 				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistoryQuarterly.incomeStatementHistory""",
@@ -153,4 +195,44 @@ class QuarterlyFinancials (yahoo.Yahoo):
 
 		self.debug_print("ebit")
 		#Demo
-		#self.debug_print("demo")
+		# Quarterly - Balance Sheet
+		#Assets
+		#Current assets
+		self.debug_print("cash")
+		self.debug_print("netReceivables")
+		self.debug_print("inventory")
+		self.debug_print("otherCurrentAssets")
+
+		#Non-current assets
+		#Property, plant and equipment
+		self.debug_print("propertyPlantEquipment")
+		self.debug_print("goodWill")
+		self.debug_print("intangibleAssets")
+
+		# Other long-term assets
+		# Total non-current assets
+		self.debug_print("totalAssets")
+
+		# Liabilities and stockholders' equity
+
+		# Liabilities
+		# Current liabilities
+		# Current debt
+		self.debug_print("accountsPayable")
+		# Accrued liabilities
+		# Other current liabilities
+		# Total current liabilities
+
+
+		# Non-current liabilities
+		# Long-term debt
+		# Deferred tax liabilities
+		# Other long-term liabilities
+		# Total non-current liabilities
+		self.debug_print("totalLiab")
+
+		# Stockholders' equity
+		self.debug_print("commonStock")
+		self.debug_print("retainedEarnings")
+		self.debug_print("otherStockholderEquity")
+		self.debug_print("totalStockholderEquity")

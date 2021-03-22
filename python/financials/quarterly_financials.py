@@ -68,9 +68,9 @@ class QuarterlyFinancials (yahoo.Yahoo):
 				# Quarterly - Balance Sheet
 				# Quarterly - Cash Flow
 				# DEMO
-				"demo"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistoryQuarterly.incomeStatementHistory""",
-				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistoryQuarterly.balanceSheetHistoryQuarterly""",
-				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistoryQuarterly.cashflowStatementHistoryQuarterly""",
+				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistoryQuarterly.incomeStatementHistory""",
+				"demo"			: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements""",
+				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.cashflowStatementHistoryQuarterly.cashflowStatements""",
 			}
 
 	def __init__(self, symbol):

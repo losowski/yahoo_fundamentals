@@ -83,7 +83,7 @@ class YearlyFinancials (yahoo.Yahoo):
 
 				## BUFFETOLOGY
 				##	-- Time for earnings
-				"currentEarningsDates"				: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.earningsDate.earningsDate[*].fmt"""
+				"currentEarningsDates"				: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.earningsDate.earningsDate[*].fmt""",
 
 				#-- Historic Earnings
 				"historicYearlyEarningsDate"		: """context.dispatcher.stores.QuoteSummaryStore.earnings.financialsChart.yearly[*].date""",
@@ -174,3 +174,12 @@ class YearlyFinancials (yahoo.Yahoo):
 		self.debug_print("retainedEarnings")
 		self.debug_print("otherStockholderEquity")
 		self.debug_print("totalStockholderEquity")
+
+		## BUFFETOLOGY
+		##	-- Time for earnings
+		self.debug_print("currentEarningsDates")
+
+		#-- Historic Earnings
+		self.debug_print("historicYearlyEarningsDate")
+		self.debug_print("historicYearlyEarningsEarnings")
+		self.debug_print("historicYearlyEarningsRevenue")

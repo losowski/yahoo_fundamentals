@@ -157,11 +157,11 @@ class QuarterlyFinancials (yahoo.Yahoo):
 
 				## BUFFETOLOGY
 				##	-- Time for earnings
-				"currentEarningsDates"				: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.earningsDate.earningsDate[*].fmt"""
+				"currentEarningsDates"				: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.earningsDate.earningsDate[*].fmt""",
 
 				#-- Historic Earnings per share
-				"historicQuarterlyEarningsEPSDate"	: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.quarterly[*].date"""
-				"historicQuarterlyEarningsEPS"		: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.quarterly[*].actual.raw"""
+				"historicQuarterlyEarningsEPSDate"	: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.quarterly[*].date""",
+				"historicQuarterlyEarningsEPS"		: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.quarterly[*].actual.raw""",
 
 				#-- Historic Earnings
 				"historicQuarterlyEarningsDate"		: """context.dispatcher.stores.QuoteSummaryStore.earnings.financialsChart.quarterly[*].date""",
@@ -253,3 +253,15 @@ class QuarterlyFinancials (yahoo.Yahoo):
 		self.debug_print("otherStockholderEquity")
 		self.debug_print("totalStockholderEquity")
 
+		## BUFFETOLOGY
+		##	-- Time for earnings
+		self.debug_print("currentEarningsDates")
+
+		#-- Historic Earnings per share
+		self.debug_print("historicQuarterlyEarningsEPSDate")
+		self.debug_print("historicQuarterlyEarningsEPS")
+
+		#-- Historic Earnings
+		self.debug_print("historicQuarterlyEarningsDate")
+		self.debug_print("historicQuarterlyEarningsEarnings")
+		self.debug_print("historicQuarterlyEarningsRevenue")

@@ -7,6 +7,7 @@ import argparse
 import logging
 
 from python.statistics import statistics
+from python.financials import financials
 
 
 def main():
@@ -26,6 +27,10 @@ def main():
 	if (args.detail[0] == 'statistics'):
 		logger.info("Statistics: %s", args.symbol[0])
 		req = statistics.Statistics(args.symbol[0])
+	elif (args.detail[0] == 'financials'):
+		logger.info("financials: %s", args.symbol[0])
+		req = financials.Financials(args.symbol[0])
+
 	#Generic behaviour
 	req.request()
 	req.parse()

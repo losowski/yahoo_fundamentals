@@ -46,18 +46,27 @@ class Yahoo (http_library.HTTPLibrary):
 				#self.logger.info("jsonData = \"%s\"", self.jsonData.keys())
 
 
+	#Get data from JSONPath
+	def getJSON(self, jsonPath):
+		#Get json Expression
+		jsonExpression = jsonpath_ng.parse(jsonPath)
+		# Get the data
+		matches = jsonExpression.find(self.jsonData)
+		self.logger.debug("json: %s: %s", jsonPath, matches)
+		# Return only the first value (not using a doc - so expect single values)
+		match = None
+		if (len(matches)):
+			match = [m.value for m in  matches]
+		return match
+
+
 	#Get Key
 	def get(self, key):
 		# Get JSON address
-		jsonKey = self.jsonMAP.get(key,"")
-		self.logger.debug("jsonkey: \"%s\"", jsonKey)
-		#Get json Expression
-		jsonExpression = jsonpath_ng.parse(jsonKey)
-		# Get the data
-		matches = jsonExpression.find(self.jsonData)
-		#self.logger.info("json: %s (\"%s\"): %s", key, jsonKey, matches.value)
-		# Return only the first value (not using a doc - so expect single values)
-		return matches[0].value
+		jsonPath = self.jsonMAP.get(key,"")
+		self.logger.debug("jsonPath: (\"%s\"): %s:", key, jsonPath)
+		return self.getJSON(jsonPath)
+
 
 	#debug print
 	def debug_print(self, key):
@@ -65,5 +74,6 @@ class Yahoo (http_library.HTTPLibrary):
 
 	#debug
 	def debug(self):
-		pass
+		for key in self.jsonMAP.keys():
+			self.debug_print(key)
 

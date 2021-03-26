@@ -4,7 +4,7 @@ import logging
 
 from python.common import yahoo
 
-class QuarterlyFinancials (yahoo.Yahoo):
+class Financials (yahoo.Yahoo):
 
 	URL = "https://uk.finance.yahoo.com/quote/{sym}/financials?p={sym}"
 
@@ -176,92 +176,8 @@ class QuarterlyFinancials (yahoo.Yahoo):
 			}
 
 	def __init__(self, symbol):
-		super(QuarterlyFinancials, self).__init__(self.URL, symbol)
-		self.logger		=	logging.getLogger('QuarterlyFinancials')
+		super(Financials, self).__init__(self.URL, symbol)
+		self.logger		=	logging.getLogger('Financials')
 
 	def __del__(self):
-		super(QuarterlyFinancials, self).__del__()
-
-	#debug
-	def debug(self):
-		#Demo
-#		self.debug_print("demo")
-		# Quarterly - Income Statement
-		self.debug_print("endDate")
-		#"revenue" ??
-		self.debug_print("costOfRevenue")
-		self.debug_print("grossProfit")
-		self.debug_print("sellingGeneralAdministrative")
-
-		self.debug_print("totalOperatingExpenses")
-		self.debug_print("operatingIncome")
-		self.debug_print("interestExpense")
-		self.debug_print("otherOperatingExpenses")
-		self.debug_print("incomeBeforeTax")
-
-		self.debug_print("incomeTaxExpense")
-		self.debug_print("netIncomeFromContinuingOps")
-		self.debug_print("netIncome")
-		self.debug_print("netIncomeApplicableToCommonShares")
-		#"Basic EPS" ??
-
-		#"Diluted EPS" ??
-		#"Basic Average Shares" ??
-		#"Diluted Average Shares" ??
-
-		self.debug_print("ebit")
-
-		# Quarterly - Balance Sheet
-		#Assets
-		#Current assets
-		self.debug_print("cash")
-		self.debug_print("netReceivables")
-		self.debug_print("inventory")
-		self.debug_print("otherCurrentAssets")
-
-		#Non-current assets
-		#Property, plant and equipment
-		self.debug_print("propertyPlantEquipment")
-		self.debug_print("goodWill")
-		self.debug_print("intangibleAssets")
-
-		# Other long-term assets
-		# Total non-current assets
-		self.debug_print("totalAssets")
-
-		# Liabilities and stockholders' equity
-
-		# Liabilities
-		# Current liabilities
-		# Current debt
-		self.debug_print("accountsPayable")
-		# Accrued liabilities
-		# Other current liabilities
-		# Total current liabilities
-
-
-		# Non-current liabilities
-		# Long-term debt
-		# Deferred tax liabilities
-		# Other long-term liabilities
-		# Total non-current liabilities
-		self.debug_print("totalLiab")
-
-		# Stockholders' equity
-		self.debug_print("commonStock")
-		self.debug_print("retainedEarnings")
-		self.debug_print("otherStockholderEquity")
-		self.debug_print("totalStockholderEquity")
-
-		## BUFFETOLOGY
-		##	-- Time for earnings
-		self.debug_print("currentEarningsDates")
-
-		#-- Historic Earnings per share
-		self.debug_print("historicQuarterlyEarningsEPSDate")
-		self.debug_print("historicQuarterlyEarningsEPS")
-
-		#-- Historic Earnings
-		self.debug_print("historicQuarterlyEarningsDate")
-		self.debug_print("historicQuarterlyEarningsEarnings")
-		self.debug_print("historicQuarterlyEarningsRevenue")
+		super(Financials, self).__del__()

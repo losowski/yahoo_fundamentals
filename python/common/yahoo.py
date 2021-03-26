@@ -74,5 +74,6 @@ class Yahoo (http_library.HTTPLibrary):
 
 	#debug
 	def debug(self):
-		pass
+		for key in self.jsonMAP.keys():
+			self.debug_print(key)
 

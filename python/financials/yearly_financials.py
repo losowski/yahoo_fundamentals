@@ -13,27 +13,27 @@ class YearlyFinancials (yahoo.Yahoo):
 				#  - Income Statement
 				#"breakdown" ??
 				#"revenue" ??
-				"costOfRevenue"						:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].costOfRevenue.raw""",
-				"grossProfit"						:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].grossProfit.raw""",
-				"sellingGeneralAdministrative"		:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].sellingGeneralAdministrative.raw""",
+				"costOfRevenue"						: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].costOfRevenue.raw""",
+				"grossProfit"						: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].grossProfit.raw""",
+				"sellingGeneralAdministrative"		: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].sellingGeneralAdministrative.raw""",
 
-				"totalOperatingExpenses"			:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].totalOperatingExpenses.raw""",
-				"operatingIncome"					:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].operatingIncome.raw""",
-				"interestExpense"					:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].interestExpense.raw""",
-				"otherOperatingExpenses"			:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].otherOperatingExpenses.raw""",
-				"incomeBeforeTax"					:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].incomeBeforeTax.raw""",
+				"totalOperatingExpenses"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].totalOperatingExpenses.raw""",
+				"operatingIncome"					: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].operatingIncome.raw""",
+				"interestExpense"					: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].interestExpense.raw""",
+				"otherOperatingExpenses"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].otherOperatingExpenses.raw""",
+				"incomeBeforeTax"					: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].incomeBeforeTax.raw""",
 
-				"incomeTaxExpense"					:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].incomeTaxExpense.raw""",
-				"netIncomeFromContinuingOps"		:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncomeFromContinuingOps.raw""",
-				"netIncome"							:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncome.raw""",
-				"netIncomeApplicableToCommonShares"	:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncomeApplicableToCommonShares.raw""",
+				"incomeTaxExpense"					: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].incomeTaxExpense.raw""",
+				"netIncomeFromContinuingOps"		: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncomeFromContinuingOps.raw""",
+				"netIncome"							: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncome.raw""",
+				"netIncomeApplicableToCommonShares"	: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncomeApplicableToCommonShares.raw""",
 				#"Basic EPS" ??
 
 				#"Diluted EPS" ??
 				#"Basic Average Shares" ??
 				#"Diluted Average Shares" ??
 
-				"ebit"	:	"""context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].ebit.raw""",
+				"ebit"	: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].ebit.raw""",
 
 				#  - Balance Sheet
 				#Assets

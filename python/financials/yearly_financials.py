@@ -72,13 +72,25 @@ class YearlyFinancials (yahoo.Yahoo):
 				"totalLiab"							: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].totalLiab.raw""",
 
 				# Stockholders' equity
-				"commonStock"					: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].commonStock.raw""",
-				"retainedEarnings"				: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].retainedEarnings.raw""",
-				"otherStockholderEquity"		: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].otherStockholderEquity.raw""",
-				"totalStockholderEquity"		: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].totalStockholderEquity.raw""",
+				"commonStock"						: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].commonStock.raw""",
+				"retainedEarnings"					: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].retainedEarnings.raw""",
+				"otherStockholderEquity"			: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].otherStockholderEquity.raw""",
+				"totalStockholderEquity"			: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].totalStockholderEquity.raw""",
 
 
 				#  - Cash Flow
+
+
+				## BUFFETOLOGY
+				##	-- Time for earnings
+				"currentEarningsDates"				: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.earningsDate.earningsDate[*].fmt"""
+
+				#-- Historic Earnings
+				"historicYearlyEarningsDate"		: """context.dispatcher.stores.QuoteSummaryStore.earnings.financialsChart.yearly[*].date""",
+				"historicYearlyEarningsEarnings"	: """context.dispatcher.stores.QuoteSummaryStore.earnings.financialsChart.yearly[*].earnings.raw""",
+				"historicYearlyEarningsRevenue"		: """context.dispatcher.stores.QuoteSummaryStore.earnings.financialsChart.yearly[*].revenue.raw""",
+
+
 				# DEMO
 				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory""",
 				"demo"			: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements""",

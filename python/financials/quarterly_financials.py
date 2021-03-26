@@ -76,6 +76,7 @@ from python.common import yahoo
 
 
 # Quarterly - Cash Flow
+
 """
 
 
@@ -153,10 +154,25 @@ class QuarterlyFinancials (yahoo.Yahoo):
 
 
 				# Quarterly - Cash Flow
+
+				## BUFFETOLOGY
+				##	-- Time for earnings
+				"currentEarningsDates"				: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.earningsDate.earningsDate[*].fmt"""
+
+				#-- Historic Earnings per share
+				"historicQuarterlyEarningsEPSDate"	: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.quarterly[*].date"""
+				"historicQuarterlyEarningsEPS"		: """context.dispatcher.stores.QuoteSummaryStore.earnings.earningsChart.quarterly[*].actual.raw"""
+
+				#-- Historic Earnings
+				"historicQuarterlyEarningsDate"		: """context.dispatcher.stores.QuoteSummaryStore.earnings.financialsChart.quarterly[*].date""",
+				"historicQuarterlyEarningsEarnings"	: """context.dispatcher.stores.QuoteSummaryStore.earnings.financialsChart.quarterly[*].earnings.raw""",
+				"historicQuarterlyEarningsRevenue"	: """context.dispatcher.stores.QuoteSummaryStore.earnings.financialsChart.quarterly[*].revenue.raw""",
+
 				# DEMO
 				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistoryQuarterly.incomeStatementHistory""",
-				"demo"			: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements""",
+				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistoryQuarterly.balanceSheetStatements""",
 				#"demo"			: """context.dispatcher.stores.QuoteSummaryStore.cashflowStatementHistoryQuarterly.cashflowStatements""",
+				"demo"			: """context.dispatcher.stores.QuoteSummaryStore.earnings""",
 			}
 
 	def __init__(self, symbol):
@@ -236,3 +252,4 @@ class QuarterlyFinancials (yahoo.Yahoo):
 		self.debug_print("retainedEarnings")
 		self.debug_print("otherStockholderEquity")
 		self.debug_print("totalStockholderEquity")
+

@@ -5,10 +5,12 @@ Query Yahoo Finance for specific Symbols
 #import
 import argparse
 import logging
+import sys
 
 from python.statistics import statistics
 from python.financials import financials
 
+print ("PYTHON_PATH: {0}".format(sys.path))
 
 def main():
 	logging.basicConfig(format='%(asctime)s\t%(name)-16s\t%(funcName)-16s\t[%(levelname)-8s] %(message)s', level=logging.INFO)

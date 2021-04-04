@@ -2,7 +2,7 @@
 
 import logging
 
-from python.common import yahoo
+from ..common import yahoo
 
 class Statistics (yahoo.Yahoo):
 

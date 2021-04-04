@@ -7,7 +7,7 @@ import re
 import json
 import jsonpath_ng
 
-from python.http import http_library
+from ..http import http_library
 
 class Yahoo (http_library.HTTPLibrary):
 

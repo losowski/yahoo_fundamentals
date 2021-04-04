@@ -1,6 +1,9 @@
 # Financials
-
+import os
+import sys
 import logging
+
+sys.path.append(os.path.join(sys.path[0], 'python', 'common'))
 
 from python.common import yahoo
 

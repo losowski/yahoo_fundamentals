@@ -46,8 +46,15 @@ class Yahoo (http_library.HTTPLibrary):
 				#self.logger.info("jsonData = \"%s\"", self.jsonData.keys())
 
 
+	# Operator[] for get (JSONPath)
+	def __getitem__(self, jsonPath):
+		return self.getJSON(jsonPath)
+
 	#Get data from JSONPath
 	def getJSON(self, jsonPath):
+		if ((jsonPath is None) or (jsonPath == "")):
+			self.logger.warning("Empty jsonPath Key")
+			return list()
 		#Get json Expression
 		jsonExpression = jsonpath_ng.parse(jsonPath)
 		# Get the data

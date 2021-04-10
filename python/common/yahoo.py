@@ -46,6 +46,10 @@ class Yahoo (http_library.HTTPLibrary):
 				#self.logger.info("jsonData = \"%s\"", self.jsonData.keys())
 
 
+	# Operator[] for get (JSONPath)
+	def __getitem__(self, jsonPath):
+		return self.getJSON(jsonPath)
+
 	#Get data from JSONPath
 	def getJSON(self, jsonPath):
 		#Get json Expression

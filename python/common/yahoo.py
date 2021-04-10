@@ -49,7 +49,7 @@ class Yahoo (http_library.HTTPLibrary):
 
 	# Operator[] for get (JSONPath)
 	def __getitem__(self, jsonPath):
-		return self.getJSON(jsonPath)
+		return self.get(jsonPath)
 
 	#Get data from JSONPath
 	def getJSON(self, jsonPath):

@@ -44,11 +44,12 @@ class Yahoo (http_library.HTTPLibrary):
 				# Convert the data into a JSON object
 				self.jsonData = json.loads(jData)
 				#self.logger.info("jsonData = \"%s\"", self.jsonData.keys())
+				break
 
 
 	# Operator[] for get (JSONPath)
 	def __getitem__(self, jsonPath):
-		return self.getJSON(jsonPath)
+		return self.get(jsonPath)
 
 	#Get data from JSONPath
 	def getJSON(self, jsonPath):

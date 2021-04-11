@@ -7,7 +7,7 @@ import re
 import json
 import jsonpath_ng
 
-from ..http import http_library
+from common import http_library
 
 class HTMLWrappedJson (http_library.HTTPLibrary):
 

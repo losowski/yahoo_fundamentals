@@ -1,10 +1,10 @@
 # Financials
 import logging
 
-from ..common import yahoo
+from ..common import html_wrapped_json
 
 
-class Financials (yahoo.Yahoo):
+class Financials (html_wrapped_json.HTMLWrappedJson):
 
 	URL = "https://uk.finance.yahoo.com/quote/{sym}/financials?p={sym}"
 

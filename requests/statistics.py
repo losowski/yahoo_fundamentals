@@ -2,9 +2,9 @@
 
 import logging
 
-from ..common import yahoo
+from ..common import html_wrapped_json
 
-class Statistics (yahoo.Yahoo):
+class Statistics (html_wrapped_json.HTMLWrappedJson):
 
 	URL = "https://uk.finance.yahoo.com/quote/{sym}/key-statistics?p={sym}"
 

@@ -16,7 +16,7 @@ def main():
 	## ARGPARSE
 	parser = argparse.ArgumentParser(description = blurb)
 	#Model building
-key	parser.add_argument(dest='symbol', nargs=1, type=str, help='symbol')
+	parser.add_argument(dest='symbol', nargs=1, type=str, help='symbol')
 	parser.add_argument('--debug', dest='debug', type=bool, help='debug', default=False)
 	#Get the arguments
 	args = parser.parse_args()

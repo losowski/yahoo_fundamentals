@@ -1,8 +1,8 @@
 # Financials
 import logging
 
-from yhfundamentals import financials
-from yfundamentals import statistics
+from . import financials
+from . import statistics
 
 
 class FundamentalsBase (object):
@@ -25,7 +25,7 @@ class FundamentalsBase (object):
 
 
 	# Initialise/return object
-	def getRequestObject(objectKey):
+	def getRequestObject(self, objectKey):
 		self.logger.debug("objectKey = %s", objectKey)
 		obj = None
 		# Check if object exists
@@ -45,6 +45,6 @@ class FundamentalsBase (object):
 
 	# debug
 	def debug(self):
-		for init in self.initMap.keys()
-			obj = getRequestObject(init)
+		for init in self.initMap.keys():
+			obj = self.getRequestObject(init)
 			obj.debug()

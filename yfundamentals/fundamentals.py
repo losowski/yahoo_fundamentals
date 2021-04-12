@@ -3,9 +3,6 @@ import logging
 
 from . import fundamentals_base
 
-from yhfundamentals import financials
-
-
 class Fundamentals (fundamentals_base.FundamentalsBase):
 
 
@@ -187,6 +184,6 @@ class Fundamentals (fundamentals_base.FundamentalsBase):
 	# Operator[]
 	def __getitem__(self, key):
 		data = None
-		obj = getRequestObject(key)
+		obj = self.getRequestObject(key)
 		if (obj is not None):
 			data = obj[key]

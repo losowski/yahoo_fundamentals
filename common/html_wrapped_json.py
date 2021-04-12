@@ -75,13 +75,3 @@ class HTMLWrappedJson (http_library.HTTPLibrary):
 		self.logger.debug("jsonPath: (\"%s\"): %s:", key, jsonPath)
 		return self.getJSON(jsonPath)
 
-
-	#debug print
-	def debug_print(self, key):
-		print ("{0}: {1}".format(key, self.get(key)))
-
-	#debug
-	def debug(self):
-		for key in self.jsonMAP.keys():
-			self.debug_print(key)
-

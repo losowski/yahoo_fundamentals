@@ -6,8 +6,7 @@ Query Yahoo Finance for specific Symbols
 import argparse
 import logging
 
-from yfundamentals import statistics
-from yfundamentals import financials
+from . import fundamentals
 
 
 def main():
@@ -17,23 +16,13 @@ def main():
 	## ARGPARSE
 	parser = argparse.ArgumentParser(description = blurb)
 	#Model building
-	parser.add_argument(dest='detail', nargs=1, type=str, help='financials, holders, options, statistics')
-	parser.add_argument(dest='symbol', nargs=1, type=str, help='symbol')
+key	parser.add_argument(dest='symbol', nargs=1, type=str, help='symbol')
 	parser.add_argument('--debug', dest='debug', type=bool, help='debug', default=False)
 	#Get the arguments
 	args = parser.parse_args()
 	logger.info("Args: %s", args)
-	req = None
-	if (args.detail[0] == 'statistics'):
-		logger.info("Statistics: %s", args.symbol[0])
-		req = statistics.Statistics(args.symbol[0])
-	elif (args.detail[0] == 'financials'):
-		logger.info("financials: %s", args.symbol[0])
-		req = financials.Financials(args.symbol[0])
-
+	req = fundamentals.Fundamentals(args.symbol[0])
 	#Generic behaviour
-	req.request()
-	req.parse()
 	if (args.debug):
 		#test
 		req.debug()

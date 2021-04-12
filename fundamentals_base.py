@@ -35,10 +35,16 @@ class FundamentalsBase (object):
 		else:
 			self.logger.debug("%s NOT found, initialising", objectKey)
 			# If not exists, initialise
-			fn = initMap[objectKey]
+			fn = self.initMap[objectKey]
 			obj = fn(self.symbol)
 			# Perform initalisation
 			obj.request()
 			obj.parse()
 			self.objMap[objectKey] = obj
 		return obj
+
+	# debug
+	def debug(self):
+		for init in self.initMap.keys()
+			obj = getRequestObject(init)
+			obj.debug()

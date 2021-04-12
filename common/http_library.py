@@ -3,13 +3,16 @@
 import logging
 import requests
 
-class HTTPLibrary(object):
+from common import timestamps
+
+class HTTPLibrary(timestamps.TimeStamp):
 
 	OPTIONS="https://uk.finance.yahoo.com/quote/{sym}/options?p={sym}"
 	HOLDERS="https://uk.finance.yahoo.com/quote/{sym}/holders?p={sym}"
 	FINANCIALS="https://uk.finance.yahoo.com/quote/{sym}/financials?p={sym}"
 
 	def __init__(self, URL, symbol):
+		super(HTTPLibrary, self).__init__()
 		self.logger		=	logging.getLogger('HTTPLibrary')
 		self.url		=	URL.format(sym= symbol)
 		self.req	=	None
@@ -17,7 +20,7 @@ class HTTPLibrary(object):
 
 
 	def __del__(self):
-		pass
+		super(HTTPLibrary, self).__del__()
 
 	def request (self):
 		self.req = requests.get(self.url)

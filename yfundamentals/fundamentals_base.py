@@ -15,6 +15,8 @@ class FundamentalsBase (object):
 					STATISTICS	:	statistics.Statistics
 				}
 
+	reqMap = {}
+
 	def __init__(self, symbol):
 		self.logger		=	logging.getLogger('FinancialsBase')
 		self.symbol		=	symbol
@@ -26,26 +28,30 @@ class FundamentalsBase (object):
 
 	# Initialise/return object
 	def getRequestObject(self, objectKey):
-		self.logger.info("objectKey = %s", objectKey)
+		self.logger.debug("RequestObject: objectKey = %s", objectKey)
 		obj = None
+		# Get the relevant object type
+		reqKey = self.reqMap.get(objectKey)
+		self.logger.debug("reqKey: %s = %s", reqKey, objectKey)
 		# Check if object exists
-		if (objectKey in self.objMap):
-			self.logger.info("%s found", objectKey)
-			obj = self.objMap[objectKey]
+		if (reqKey in self.objMap):
+			self.logger.debug("RequestObject:  %s found", objectKey)
+			#Fetch the data
+			obj = self.objMap[reqKey]
 		else:
-			self.logger.info("%s NOT found, initialising", objectKey)
+			self.logger.debug("RequestObject: %s NOT found, initialising", objectKey)
 			# If not exists, initialise
-			fn = self.initMap[objectKey]
+			fn = self.initMap[reqKey]
 			obj = fn(self.symbol)
 			# Perform initalisation
 			obj.request()
 			obj.parse()
-		#Fetch the data
-		self.objMap[objectKey] = obj
+			# Store the object
+			self.objMap[reqKey] = obj
 		return obj
 
 	# debug
 	def debug(self):
-		for init in self.initMap.keys():
-			obj = self.getRequestObject(init)
-			obj.debug()
+		for key in self.reqMap.keys():
+			obj = self.getRequestObject(key)
+			obj.debug_print(key)

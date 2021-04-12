@@ -31,8 +31,3 @@ class HTTPLibrary(timestamps.TimeStamp):
 	#debug print
 	def debug_print(self, key):
 		print ("{0}: {1}".format(key, self.get(key)))
-
-	#debug
-	def debug(self):
-		for key in self.jsonMAP.keys():
-			self.debug_print(key)

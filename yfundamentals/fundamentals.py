@@ -5,7 +5,7 @@ from . import fundamentals_base
 
 class Fundamentals (fundamentals_base.FundamentalsBase):
 
-	jsonMAP = { \
+	reqMap = { \
 				#-- Quarterly - 
 				# Quarterly - Income Statement
 				"Quarterly.endDate"								:	fundamentals_base.FundamentalsBase.FINANCIALS,

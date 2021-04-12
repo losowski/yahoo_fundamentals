@@ -6,6 +6,7 @@ from . import fundamentals_base
 class Fundamentals (fundamentals_base.FundamentalsBase):
 
 	reqMap = { \
+				# ---- FINANCIALS ----
 				#-- Quarterly - 
 				# Quarterly - Income Statement
 				"Quarterly.endDate"								:	fundamentals_base.FundamentalsBase.FINANCIALS,
@@ -170,6 +171,57 @@ class Fundamentals (fundamentals_base.FundamentalsBase):
 				#"demo"			:	fundamentals_base.FundamentalsBase.FINANCIALS,
 				#"demo"			:	fundamentals_base.FundamentalsBase.FINANCIALS,
 				#"demo"			:	fundamentals_base.FundamentalsBase.FINANCIALS,
+
+
+				# ---- STATIISTICS ----
+				#-- Valuation measures
+				##-**- Financial Highlights
+				"marketCap"					:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"enterpriseValue"			:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"trailingPE"				:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"forwardPE"					:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"pegRatio"					:	fundamentals_base.FundamentalsBase.STATISTICS,
+
+				"priceToSalesTrailing12Months"		:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"priceToBook"				:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"enterpriseToRevenue"		:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"enterpriseToEbitda"		:	fundamentals_base.FundamentalsBase.STATISTICS,
+
+				# -- Profitability
+				"profitMargins"				:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"operatingMargins"			:	fundamentals_base.FundamentalsBase.STATISTICS,
+
+				#-- Management effectiveness (last year)
+				"returnOnAssets"			:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"returnOnEquity"			:	fundamentals_base.FundamentalsBase.STATISTICS,
+
+				#-- Income statement (last year)
+				#-- Balance Sheet (last quarter)
+				"totalCash"					:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"totalCashPerShare"			:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"totalDebt"					:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"debtToEquity"				:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"currentRatio"				:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"bookValue"					:	fundamentals_base.FundamentalsBase.STATISTICS,
+
+				#-- Cash flow statement (last year)
+				"operatingCashflow"			:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"freeCashflow"				:	fundamentals_base.FundamentalsBase.STATISTICS,
+
+				# -- Share statistics
+				"sharesOutstanding"			:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"floatShares"				:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"heldPercentInsiders"		:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"heldPercentInstitutions"	:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"sharesShort"				:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"shortRatio"				:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"shortPercentOfFloat"		:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"sharesPercentSharesOut"	:	fundamentals_base.FundamentalsBase.STATISTICS,
+				"sharesShortPriorMonth"		:	fundamentals_base.FundamentalsBase.STATISTICS,
+				# DEMO
+				#"demo"			:	fundamentals_base.FundamentalsBase.STATISTICS,
+				#"demo"			:	fundamentals_base.FundamentalsBase.STATISTICS,
+				#"demo"			:	fundamentals_base.FundamentalsBase.STATISTICS,
 			}
 
 	def __init__(self, symbol):
@@ -185,3 +237,4 @@ class Fundamentals (fundamentals_base.FundamentalsBase):
 		obj = self.getRequestObject(key)
 		if (obj is not None):
 			data = obj[key]
+		return data

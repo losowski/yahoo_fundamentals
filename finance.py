@@ -17,7 +17,7 @@ def main():
 	parser = argparse.ArgumentParser(description = blurb)
 	#Model building
 	parser.add_argument(dest='symbol', nargs=1, type=str, help='symbol')
-	parser.add_argument('debug', nargs=1, dest='param', type=bool, help='param')
+	parser.add_argument( dest='param', nargs=1, type=str, help='param')
 	parser.add_argument('--debug', dest='debug', type=bool, help='debug', default=False)
 	#Get the arguments
 	args = parser.parse_args()
@@ -26,7 +26,7 @@ def main():
 	# Get a specific request
 	if (args.param):
 		for p in args.param:
-			print ("{0}: {1}".format(p, req[key]))
+			print ("{0}: {1}".format(p, req[p]))
 
 	#Generic behaviour
 	if (args.debug):

@@ -26,21 +26,22 @@ class FundamentalsBase (object):
 
 	# Initialise/return object
 	def getRequestObject(self, objectKey):
-		self.logger.debug("objectKey = %s", objectKey)
+		self.logger.info("objectKey = %s", objectKey)
 		obj = None
 		# Check if object exists
 		if (objectKey in self.objMap):
-			self.logger.debug("%s found", objectKey)
+			self.logger.info("%s found", objectKey)
 			obj = self.objMap[objectKey]
 		else:
-			self.logger.debug("%s NOT found, initialising", objectKey)
+			self.logger.info("%s NOT found, initialising", objectKey)
 			# If not exists, initialise
 			fn = self.initMap[objectKey]
 			obj = fn(self.symbol)
 			# Perform initalisation
 			obj.request()
 			obj.parse()
-			self.objMap[objectKey] = obj
+		#Fetch the data
+		self.objMap[objectKey] = obj
 		return obj
 
 	# debug

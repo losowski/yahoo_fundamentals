@@ -26,6 +26,7 @@ class Fundamentals (fundamentals_base.FundamentalsBase):
 				"Quarterly.netIncome"							:	fundamentals_base.FundamentalsBase.FINANCIALS,
 				"Quarterly.netIncomeApplicableToCommonShares"	:	fundamentals_base.FundamentalsBase.FINANCIALS,
 				#"Basic EPS" ??
+				"Quarterly.Dates"								:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
 				"Quarterly.BasicEPS"							:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
 
 				#"Diluted EPS" ??

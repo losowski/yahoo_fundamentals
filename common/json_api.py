@@ -25,7 +25,7 @@ class JSONAPI (http_library.HTTPLibrary):
 
 	# def request()
 	def parse(self):
-		self.logger.info("%s", self.req.text)
+		self.logger.debug("%s", self.req.text)
 		#Convert into a JSON object
 		self.jsonData = json.loads(self.req.text)
 

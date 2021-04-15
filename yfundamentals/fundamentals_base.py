@@ -2,17 +2,21 @@
 import logging
 
 from . import financials
+from . import fundamentaltimeseries
 from . import statistics
 
 
 class FundamentalsBase (object):
 
-	FINANCIALS	=	"financials"
-	STATISTICS	=	"statistics"
+	FINANCIALS				=	"financials"
+	FUNDAMENTALSTIMESERIES	=	"fundamentals-timeseries"
+	STATISTICS				=	"statistics"
 
 	initMap =	{
-					FINANCIALS	:	financials.Financials,
-					STATISTICS	:	statistics.Statistics
+					FINANCIALS				:	financials.Financials,
+					FUNDAMENTALSTIMESERIES	:	fundamentaltimeseries.FundamentalTimeSeries,
+					STATISTICS				:	statistics.Statistics
+
 				}
 
 	reqMap = {}

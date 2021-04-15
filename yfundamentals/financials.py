@@ -97,7 +97,7 @@ class Financials (html_wrapped_json.HTMLWrappedJson):
 				"Yearly.netIncomeFromContinuingOps"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncomeFromContinuingOps.raw""",
 				"Yearly.netIncome"							: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncome.raw""",
 				"Yearly.netIncomeApplicableToCommonShares"	: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncomeApplicableToCommonShares.raw""",
-				#"Basic EPS" ??
+				"Yearly.annualBasicEPS"						: """context.dispatcher.stores.QuoteTimeSeriesStore.timeSeries.annualBasicEPS[*].reportedValue.raw""",
 
 				#"Diluted EPS" ??
 				#"Basic Average Shares" ??

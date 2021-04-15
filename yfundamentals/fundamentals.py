@@ -95,7 +95,7 @@ class Fundamentals (fundamentals_base.FundamentalsBase):
 				"Yearly.netIncomeFromContinuingOps"			:	fundamentals_base.FundamentalsBase.FINANCIALS,
 				"Yearly.netIncome"							:	fundamentals_base.FundamentalsBase.FINANCIALS,
 				"Yearly.netIncomeApplicableToCommonShares"	:	fundamentals_base.FundamentalsBase.FINANCIALS,
-				#"Basic EPS" ??
+				"Yearly.annualBasicEPS"						:	fundamentals_base.FundamentalsBase.FINANCIALS,
 
 				#"Diluted EPS" ??
 				#"Basic Average Shares" ??

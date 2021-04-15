@@ -7,23 +7,19 @@ import re
 import json
 import jsonpath_ng
 
-from common import http_library
+from common import json_api
 
-class HTMLWrappedJson (http_library.HTTPLibrary):
-
-	jsonMAP = {}
+class HTMLWrappedJson (json_api.JSONAPI):
 
 	yahooData = re.compile(".*root.App.main = (?P<json_data>(.)+)\s?\}\s?\(this\)\);\s+</script>.*", re.DOTALL)
 
 	def __init__(self, URL, symbol):
 		super(HTMLWrappedJson, self).__init__(URL, symbol)
 		self.logger			=	logging.getLogger('HTMLWrappedJson')
-		self.jsonData		=	None
 
 
 	def __del__(self):
 		super(HTMLWrappedJson, self).__del__()
-		pass
 
 	# def request()
 	def parse(self):
@@ -45,33 +41,3 @@ class HTMLWrappedJson (http_library.HTTPLibrary):
 				self.jsonData = json.loads(jData)
 				#self.logger.info("jsonData = \"%s\"", self.jsonData.keys())
 				break
-
-
-	# Operator[] for get (JSONPath)
-	def __getitem__(self, jsonPath):
-		return self.get(jsonPath)
-
-	#Get data from JSONPath
-	def getJSON(self, jsonPath):
-		if ((jsonPath is None) or (jsonPath == "")):
-			self.logger.warning("Empty jsonPath Key")
-			return list()
-		#Get json Expression
-		jsonExpression = jsonpath_ng.parse(jsonPath)
-		# Get the data
-		matches = jsonExpression.find(self.jsonData)
-		self.logger.debug("json: %s: %s", jsonPath, matches)
-		# Return only the first value (not using a doc - so expect single values)
-		match = None
-		if (len(matches)):
-			match = [m.value for m in  matches]
-		return match
-
-
-	#Get Key
-	def get(self, key):
-		# Get JSON address
-		jsonPath = self.jsonMAP.get(key,"")
-		self.logger.debug("jsonPath: (\"%s\"): %s:", key, jsonPath)
-		return self.getJSON(jsonPath)
-

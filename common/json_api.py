@@ -26,23 +26,8 @@ class JSONAPI (http_library.HTTPLibrary):
 	# def request()
 	def parse(self):
 		self.logger.info("%s", self.req.text)
-		# Convert the HTML string into a series of scripts
-	#	scripts = self.req.text.split('<script')
-	#	for scr in scripts:
-	#		self.logger.debug("Script: %s", scr)
-	#		# Check against regex
-	#		reMatch = self.yahooData.match(scr)
-	#		self.logger.debug("JSON Match: \"%s\"", reMatch)
-	#		# If it is a match - store the json in the object
-	#		if (reMatch != None):
-	#			jMatch = reMatch.group('json_data')
-	#			jData = jMatch.replace(';','')
-	#			#self.logger.debug("JSON Data: \"%s\"", jsonData)
-	#			#print ("{json}".format(json=jsonData))
-	#			# Convert the data into a JSON object
-	#			self.jsonData = json.loads(jData)
-	#			#self.logger.info("jsonData = \"%s\"", self.jsonData.keys())
-	#			break
+		#Convert into a JSON object
+		self.jsonData = json.loads(self.req.text)
 
 
 	# Operator[] for get (JSONPath)
@@ -51,7 +36,18 @@ class JSONAPI (http_library.HTTPLibrary):
 
 	#Get data from JSONPath
 	def getJSON(self, jsonPath):
-		return None
+		if ((jsonPath is None) or (jsonPath == "")):
+			self.logger.warning("Empty jsonPath Key")
+			return list()
+		#Get json Expression
+		jsonExpression = jsonpath_ng.parse(jsonPath)
+		# Get the data
+		matches = jsonExpression.find(self.jsonData)
+		self.logger.debug("json: %s: %s", jsonPath, matches)
+		match = None
+		if (len(matches)):
+			match = [m.value for m in  matches]
+		return match
 
 
 	#Get Key

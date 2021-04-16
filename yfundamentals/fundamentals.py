@@ -27,24 +27,24 @@ class Fundamentals (fundamentals_base.FundamentalsBase):
 				"Quarterly.netIncomeApplicableToCommonShares"	:	fundamentals_base.FundamentalsBase.FINANCIALS,
 
 
-				"Quarterly.PretaxIncome"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				"Quarterly.OtherIncomeExpense"					:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				#"Quarterly.CostOfRevenue"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				"Quarterly.TotalRevenue"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				"Quarterly.DilutedEPS"							:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				#"Quarterly.NetIncomeContinuousOperations"		:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				#"Quarterly.NetIncome"							:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				"Quarterly.Ebitda"								:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				#"Quarterly.InterestExpense"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				"Quarterly.SellingGeneralAndAdministration"		:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				#"Quarterly.OperatingIncome"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				"Quarterly.DilutedAverageShares"				:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				#"Quarterly.NetIncomeCommonStockholders"			:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				"Quarterly.OperatingExpense"					:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				"Quarterly.BasicAverageShares"					:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				#"Quarterly.GrossProfit"							:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				"Quarterly.TaxProvision"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
-				"Quarterly.BasicEPS"							:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES
+				"Quarterly.PretaxIncome"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				"Quarterly.OtherIncomeExpense"					:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				#"Quarterly.CostOfRevenue"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				"Quarterly.TotalRevenue"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				"Quarterly.DilutedEPS"							:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				#"Quarterly.NetIncomeContinuousOperations"		:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				#"Quarterly.NetIncome"							:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				"Quarterly.Ebitda"								:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				#"Quarterly.InterestExpense"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				"Quarterly.SellingGeneralAndAdministration"		:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				#"Quarterly.OperatingIncome"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				"Quarterly.DilutedAverageShares"				:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				#"Quarterly.NetIncomeCommonStockholders"			:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				"Quarterly.OperatingExpense"					:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				"Quarterly.BasicAverageShares"					:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				#"Quarterly.GrossProfit"							:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				"Quarterly.TaxProvision"						:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
+				"Quarterly.BasicEPS"							:	fundamentals_base.FundamentalsBase.FUNDAMENTALSTIMESERIES,
 
 				#"Diluted EPS" ??
 				#"Basic Average Shares" ??

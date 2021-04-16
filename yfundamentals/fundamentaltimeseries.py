@@ -10,45 +10,25 @@ class FundamentalTimeSeries (json_api.JSONAPI):
 
 	# NOTE: Data from this might be backwards
 	jsonMAP = { \
-				"Quarterly.PretaxIncome"						:	"""timeseries.result[*].quarterlyPretaxIncome[*].reportedValue.raw"""
-				"Quarterly.OtherIncomeExpense"					:	"""timeseries.result[*].quarterlyOtherIncomeExpense[*].reportedValue.raw"""
-				"Quarterly.CostOfRevenue"						:	"""timeseries.result[*].quarterlyCostOfRevenue[*].reportedValue.raw"""
-				"Quarterly.TotalRevenue"						:	"""timeseries.result[*].quarterlyTotalRevenue[*].reportedValue.raw"""
-				"Quarterly.DilutedEPS"							:	"""timeseries.result[*].quarterlyDilutedEPS[*].reportedValue.raw"""
-				"Quarterly.NetIncomeContinuousOperations"		:	"""timeseries.result[*].quarterlyNetIncomeContinuousOperations[*].reportedValue.raw"""
-				"Quarterly.NetIncome"							:	"""timeseries.result[*].quarterlyNetIncome[*].reportedValue.raw"""
-				"Quarterly.Ebitda"								:	"""timeseries.result[*].quarterlyEbitda[*].reportedValue.raw"""
-				"Quarterly.InterestExpense"						:	"""timeseries.result[*].quarterlyInterestExpense[*].reportedValue.raw"""
-				"Quarterly.SellingGeneralAndAdministration"		:	"""timeseries.result[*].quarterlySellingGeneralAndAdministration[*].reportedValue.raw"""
-				"Quarterly.OperatingIncome"						:	"""timeseries.result[*].quarterlyOperatingIncome[*].reportedValue.raw"""
-				"Quarterly.DilutedAverageShares"				:	"""timeseries.result[*].quarterlyDilutedAverageShares[*].reportedValue.raw"""
-				"Quarterly.NetIncomeCommonStockholders"			:	"""timeseries.result[*].quarterlyNetIncomeCommonStockholders[*].reportedValue.raw"""
-				"Quarterly.OperatingExpense"					:	"""timeseries.result[*].quarterlyOperatingExpense[*].reportedValue.raw"""
-				"Quarterly.BasicAverageShares"					:	"""timeseries.result[*].quarterlyBasicAverageShares[*].reportedValue.raw"""
-				"Quarterly.GrossProfit"							:	"""timeseries.result[*].quarterlyGrossProfit[*].reportedValue.raw"""
-				"Quarterly.TaxProvision"						:	"""timeseries.result[*].quarterlyTaxProvision[*].reportedValue.raw"""
-				"Quarterly.BasicEPS"							:	"""timeseries.result[*].quarterlyBasicEPS[*].reportedValue.raw"""
+				"Quarterly.PretaxIncome"						:	"""timeseries.result[*].quarterlyPretaxIncome[*].reportedValue.raw""",
+				"Quarterly.OtherIncomeExpense"					:	"""timeseries.result[*].quarterlyOtherIncomeExpense[*].reportedValue.raw""",
+				"Quarterly.CostOfRevenue"						:	"""timeseries.result[*].quarterlyCostOfRevenue[*].reportedValue.raw""",
+				"Quarterly.TotalRevenue"						:	"""timeseries.result[*].quarterlyTotalRevenue[*].reportedValue.raw""",
+				"Quarterly.DilutedEPS"							:	"""timeseries.result[*].quarterlyDilutedEPS[*].reportedValue.raw""",
+				"Quarterly.NetIncomeContinuousOperations"		:	"""timeseries.result[*].quarterlyNetIncomeContinuousOperations[*].reportedValue.raw""",
+				"Quarterly.NetIncome"							:	"""timeseries.result[*].quarterlyNetIncome[*].reportedValue.raw""",
+				"Quarterly.Ebitda"								:	"""timeseries.result[*].quarterlyEbitda[*].reportedValue.raw""",
+				"Quarterly.InterestExpense"						:	"""timeseries.result[*].quarterlyInterestExpense[*].reportedValue.raw""",
+				"Quarterly.SellingGeneralAndAdministration"		:	"""timeseries.result[*].quarterlySellingGeneralAndAdministration[*].reportedValue.raw""",
+				"Quarterly.OperatingIncome"						:	"""timeseries.result[*].quarterlyOperatingIncome[*].reportedValue.raw""",
+				"Quarterly.DilutedAverageShares"				:	"""timeseries.result[*].quarterlyDilutedAverageShares[*].reportedValue.raw""",
+				"Quarterly.NetIncomeCommonStockholders"			:	"""timeseries.result[*].quarterlyNetIncomeCommonStockholders[*].reportedValue.raw""",
+				"Quarterly.OperatingExpense"					:	"""timeseries.result[*].quarterlyOperatingExpense[*].reportedValue.raw""",
+				"Quarterly.BasicAverageShares"					:	"""timeseries.result[*].quarterlyBasicAverageShares[*].reportedValue.raw""",
+				"Quarterly.GrossProfit"							:	"""timeseries.result[*].quarterlyGrossProfit[*].reportedValue.raw""",
+				"Quarterly.TaxProvision"						:	"""timeseries.result[*].quarterlyTaxProvision[*].reportedValue.raw""",
+				"Quarterly.BasicEPS"							:	"""timeseries.result[*].quarterlyBasicEPS[*].reportedValue.raw""",
 			}
-
-quarterlyPretaxIncome
-quarterlyOtherIncomeExpense
-quarterlyCostOfRevenue
-quarterlyTotalRevenue
-quarterlyDilutedEPS
-quarterlyNetIncomeContinuousOperations
-quarterlyNetIncome
-quarterlyEbitda
-quarterlyInterestExpense
-quarterlySellingGeneralAndAdministration
-quarterlyOperatingIncome
-quarterlyDilutedAverageShares
-quarterlyNetIncomeCommonStockholders
-quarterlyOperatingExpense
-quarterlyBasicAverageShares
-quarterlyGrossProfit
-quarterlyTaxProvision
-quarterlyBasicEPS
-
 
 
 	def __init__(self, symbol):

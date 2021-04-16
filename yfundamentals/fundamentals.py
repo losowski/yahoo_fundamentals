@@ -39,7 +39,6 @@ class Fundamentals (fundamentals_base.FundamentalsBase):
 
 				#"Diluted EPS" ??
 				#"Basic Average Shares" ??
-				#"Diluted Average Shares" ??
 
 				"Quarterly.ebit"								:	fundamentals_base.FundamentalsBase.FINANCIALS,
 
@@ -105,11 +104,12 @@ class Fundamentals (fundamentals_base.FundamentalsBase):
 				"Yearly.netIncomeFromContinuingOps"			:	fundamentals_base.FundamentalsBase.FINANCIALS,
 				"Yearly.netIncome"							:	fundamentals_base.FundamentalsBase.FINANCIALS,
 				"Yearly.netIncomeApplicableToCommonShares"	:	fundamentals_base.FundamentalsBase.FINANCIALS,
-				"Yearly.annualBasicEPS"						:	fundamentals_base.FundamentalsBase.FINANCIALS,
+				"Yearly.BasicEPS"							:	fundamentals_base.FundamentalsBase.FINANCIALS,
 
-				#"Diluted EPS" ??
-				#"Basic Average Shares" ??
-				#"Diluted Average Shares" ??
+				"Yearly.BasicEPS"							:	fundamentals_base.FundamentalsBase.FINANCIALS,
+				"Yearly.DilutedEPS"							:	fundamentals_base.FundamentalsBase.FINANCIALS,
+				"Yearly.BasicAverageShares"					:	fundamentals_base.FundamentalsBase.FINANCIALS,
+				"Yearly.DilutedAverageShares"				:	fundamentals_base.FundamentalsBase.FINANCIALS,
 
 				"Yearly.ebit"	:	fundamentals_base.FundamentalsBase.FINANCIALS,
 

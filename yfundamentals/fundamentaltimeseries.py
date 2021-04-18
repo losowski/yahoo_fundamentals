@@ -1,7 +1,7 @@
 # Financials
 import logging
 
-from common import json_api
+from ..common import json_api
 
 class FundamentalTimeSeries (json_api.JSONAPI):
 

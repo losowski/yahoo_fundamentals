@@ -7,7 +7,7 @@ import re
 import json
 import jsonpath_ng
 
-from common import json_api
+from ..common import json_api
 
 class HTMLWrappedJson (json_api.JSONAPI):
 

@@ -3,7 +3,7 @@
 import logging
 import requests
 
-from common import timestamps
+from . import timestamps
 
 class HTTPLibrary(timestamps.TimeStamp):
 

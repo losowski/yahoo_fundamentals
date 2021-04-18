@@ -7,7 +7,7 @@ import re
 import json
 import jsonpath_ng
 
-from common import http_library
+from . import http_library
 
 class JSONAPI (http_library.HTTPLibrary):
 

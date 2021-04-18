@@ -6,7 +6,7 @@ Query Yahoo Finance for specific Symbols
 import argparse
 import logging
 
-from yfundamentals import fundamentals
+from python.yfundamentals import fundamentals
 
 
 def main():

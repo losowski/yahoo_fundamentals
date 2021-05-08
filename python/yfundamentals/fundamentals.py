@@ -97,6 +97,7 @@ class Fundamentals (fundamentals_base.FundamentalsBase):
 				# Quarterly - Cash Flow
 
 				#  - Income Statement
+				"Yearly.endDate"							:	fundamentals_base.FundamentalsBase.FINANCIALS,
 				#"breakdown" ??
 				#"revenue" ??
 				"Yearly.costOfRevenue"						:	fundamentals_base.FundamentalsBase.FINANCIALS,

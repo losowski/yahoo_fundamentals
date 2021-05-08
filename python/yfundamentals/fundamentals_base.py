@@ -50,6 +50,7 @@ class FundamentalsBase (object):
 			# Perform initalisation
 			obj.request()
 			obj.parse()
+			self.logger.debug("reqKey = %s", reqKey)
 			# Store the object
 			self.objMap[reqKey] = obj
 		return obj

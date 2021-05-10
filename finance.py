@@ -6,7 +6,7 @@ Query Yahoo Finance for specific Symbols
 import argparse
 import logging
 
-from yfundamentals import fundamentals
+from python.yfundamentals import fundamentals
 
 
 def main():
@@ -25,8 +25,7 @@ def main():
 	req = fundamentals.Fundamentals(args.symbol[0])
 	# Get a specific request
 	if (args.param):
-		for p in args.param:
-			print ("{0}: {1}".format(p, req[p]))
+		print ("{0}: {1}".format(args.param[0], req[ args.param[0] ]))
 
 	#Generic behaviour
 	if (args.debug):

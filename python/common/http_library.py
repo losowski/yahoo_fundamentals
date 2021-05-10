@@ -3,7 +3,7 @@
 import logging
 import requests
 
-from common import timestamps
+from . import timestamps
 
 class HTTPLibrary(timestamps.TimeStamp):
 
@@ -16,7 +16,7 @@ class HTTPLibrary(timestamps.TimeStamp):
 	def __init__(self, URL, symbol):
 		super(HTTPLibrary, self).__init__()
 		self.logger		=	logging.getLogger('HTTPLibrary')
-		self.url		=	URL.format(sym= symbol)
+		self.url		=	URL.format(sym=symbol, startTime=self.timestamp2000, timeNow=self.epochNow)
 		self.req	=	None
 		self.logger.info("GET: %s", self.url)
 

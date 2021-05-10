@@ -1,7 +1,7 @@
 # Financials
 import logging
 
-from common import html_wrapped_json
+from ..common import html_wrapped_json
 
 
 class Financials (html_wrapped_json.HTMLWrappedJson):
@@ -79,11 +79,11 @@ class Financials (html_wrapped_json.HTMLWrappedJson):
 
 
 				# Quarterly - Cash Flow
-
+				"Yearly.endDate"							: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].endDate.fmt""",
 				#  - Income Statement
 				#"breakdown" ??
 				#"revenue" ??
-				"Yearly.costOfRevenue"						: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].costOfRevenue.raw""",
+				"Yearly.costOfRevenue"						: """context.dispatcher.stores.QuoteTimeSeriesStore.timeSeries.annualCostOfRevenue[*].reportedValue.raw""",
 				"Yearly.grossProfit"						: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].grossProfit.raw""",
 				"Yearly.sellingGeneralAdministrative"		: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].sellingGeneralAdministrative.raw""",
 
@@ -97,13 +97,12 @@ class Financials (html_wrapped_json.HTMLWrappedJson):
 				"Yearly.netIncomeFromContinuingOps"			: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncomeFromContinuingOps.raw""",
 				"Yearly.netIncome"							: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncome.raw""",
 				"Yearly.netIncomeApplicableToCommonShares"	: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].netIncomeApplicableToCommonShares.raw""",
-				#"Basic EPS" ??
+				"Yearly.BasicEPS"							: """context.dispatcher.stores.QuoteTimeSeriesStore.timeSeries.annualBasicEPS[*].reportedValue.raw""",
+				"Yearly.DilutedEPS"							: """context.dispatcher.stores.QuoteTimeSeriesStore.timeSeries.annualDilutedEPS[*].reportedValue.raw""",
+				"Yearly.BasicAverageShares"					: """context.dispatcher.stores.QuoteTimeSeriesStore.timeSeries.annualBasicAverageShares[*].reportedValue.raw""",
+				"Yearly.DilutedAverageShares"				: """context.dispatcher.stores.QuoteTimeSeriesStore.timeSeries.annualDilutedAverageShares[*].reportedValue.raw""",
 
-				#"Diluted EPS" ??
-				#"Basic Average Shares" ??
-				#"Diluted Average Shares" ??
-
-				"Yearly.ebit"	: """context.dispatcher.stores.QuoteSummaryStore.incomeStatementHistory.incomeStatementHistory[*].ebit.raw""",
+				"Yearly.Ebitda"								: """context.dispatcher.stores.QuoteTimeSeriesStore.timeSeries.annualEbitda[*].reportedValue.raw""",
 
 				#  - Balance Sheet
 				#Assets

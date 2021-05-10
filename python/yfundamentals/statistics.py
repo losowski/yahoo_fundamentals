@@ -2,7 +2,7 @@
 
 import logging
 
-from common import html_wrapped_json
+from ..common import html_wrapped_json
 
 class Statistics (html_wrapped_json.HTMLWrappedJson):
 

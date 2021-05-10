@@ -79,7 +79,7 @@ class Financials (html_wrapped_json.HTMLWrappedJson):
 
 
 				# Quarterly - Cash Flow
-				"Yearly.endDate"							: """context.dispatcher.stores.QuoteTimeSeriesStore.timeSeries.annualEbitda[*].reportedValue.asOfDate""",
+				"Yearly.endDate"							: """context.dispatcher.stores.QuoteSummaryStore.balanceSheetHistory.balanceSheetStatements[*].endDate.fmt""",
 				#  - Income Statement
 				#"breakdown" ??
 				#"revenue" ??

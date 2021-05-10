@@ -10,7 +10,7 @@ from python.yfundamentals import fundamentals
 
 
 def main():
-	logging.basicConfig(format='%(asctime)s\t%(name)-16s\t%(funcName)-16s\t[%(levelname)-8s] %(message)s', level=logging.DEBUG)
+	logging.basicConfig(format='%(asctime)s\t%(name)-16s\t%(funcName)-16s\t[%(levelname)-8s] %(message)s', level=logging.INFO)
 	logger = logging.getLogger('main')
 	blurb = "Query Yahoo Finance for specific Symbols"
 	## ARGPARSE
